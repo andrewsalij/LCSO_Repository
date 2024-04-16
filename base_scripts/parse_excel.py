@@ -1,0 +1,61 @@
+import copy
+import numpy as np
+import pandas as pd
+import berremueller.python_util as pu
+from typing import Union
+import xarray as xr
+import re
+'''Parse scripts for .xlsx files'''
+
+def parse_mueller_column_label(label:str,idx_start: int = 1):
+    mueller_label,remainder_label = split_mueller_column_label(label)
+    if mueller_label is not None:
+        mueller_indices = extract_digits_from_str(mueller_label)
+        return_mueller_indices = tuple(map(lambda x:x-idx_start ,mueller_indices))
+    else: return_mueller_indices = (None,None)
+    if remainder_label is not None:
+        return_remainder_value = extract_number_from_str(remainder_label)
+    else: return_remainder_value = None
+    return return_mueller_indices,return_remainder_value
+
+def split_mueller_column_label(label: str,idx_start: int = 1)->tuple([str,Union[str,None]]):
+    mueller_label = re.match("[mM].*[\d][\d]",label)
+    if mueller_label is not None:
+        mueller_label = mueller_label.string
+        remainder_label = label.replace(mueller_label,"")
+    else: remainder_label = None
+    if remainder_label == "":remainder_label = None
+    return mueller_label,remainder_label
+
+def extract_digits_from_str(string: str)->tuple([int]):
+    '''Gets all digits and returns them as a tuple of ints'''
+    digits = re.findall('\d',string)
+    return tuple(map(int,digits))
+
+def extract_number_from_str(string: str)->int:
+    '''Gets first number from string and returns it as a float'''
+    number = re.match('[\d]*(\.[\d]*)?',string)
+    return float(number)
+
+
+def mueller_excel_to_dataarray(filepath):
+    '''Converts excel file to numpy array'''
+    dataframe = pd.read_excel(filepath)
+    array = dataframe.to_numpy()
+    columns = list(dataframe.columns)
+    columns_clean = []
+    for column in columns:
+        clean_column = pu.clean_up_string(column)
+        columns_clean.append(clean_column)
+    wavelength_idx = pu.get_index_in_list_containing_substring(columns_clean, 'wavelength')
+    wavelength_array = copy.deepcopy(array[:,wavelength_idx])
+    wavelength_label = columns[wavelength_idx]
+    mueller_array = np.delete(array,wavelength_idx,axis = 1)
+    remainder_array = np.zeros(np.size(mueller_array,axis = 1))
+    mueller_array_reshaped = np.zeros((4,4,np.size(mueller_array,axis = 0)))
+    for i in range(np.size(mueller_array,axis= 1)):
+        mueller_label = columns[i]
+        mueller_indices,remainder_array[i] = parse_mueller_column_label(mueller_label)
+        mueller_array_reshaped[mueller_indices[0],mueller_indices[1],:] = mueller_array[:,i]
+    mueller_dataarray = xr.DataArray(mueller_array_reshaped,coords = {wavelength_label:wavelength_array},dims = ['row','column',wavelength_label])
+    return mueller_dataarray
