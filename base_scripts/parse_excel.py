@@ -5,6 +5,7 @@ import berremueller.python_util as pu
 from typing import Union
 import xarray as xr
 import re
+import warnings
 '''Parse scripts for .xlsx files'''
 
 def parse_mueller_column_label(label:str,idx_start: int = 1):
@@ -18,11 +19,18 @@ def parse_mueller_column_label(label:str,idx_start: int = 1):
     else: return_remainder_value = None
     return return_mueller_indices,return_remainder_value
 
-def split_mueller_column_label(label: str,idx_start: int = 1)->tuple([str,Union[str,None]]):
-    mueller_match = re.match("[mM]_?[\d][\d]",label)
+def split_mueller_column_label(label: str,idx_start: int = 1)->tuple([Union[str,None],Union[str,None]]):
+    all_mueller_matches = re.findall("[mM]_?[\d][\d]",label)
+    if len(all_mueller_matches) == 0:
+        mueller_match = None
+    elif len(all_mueller_matches) == 1:
+        mueller_match = all_mueller_matches[0]
+    else:
+        warnings.warn("Multiple Mueller Matches in label:-early return"+label)
+        return None, None
     mueller_label  = None
     if mueller_match is not None:
-        mueller_label = mueller_match.group()
+        mueller_label = mueller_match
     if mueller_label is not None:
         remainder_label = label.replace(mueller_label,"")
     else: remainder_label = None
@@ -44,7 +52,7 @@ def extract_number_from_str(string: str)->int:
 
 
 def mueller_excel_to_dataarray(filepath,verbose = False):
-    '''Converts excel file to numpy array'''
+    '''Converts excel file to xarray datarray'''
     dataframe = pd.read_excel(filepath)
     array = dataframe.to_numpy()
     columns = list(dataframe.columns)
