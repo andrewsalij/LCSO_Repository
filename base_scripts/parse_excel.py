@@ -19,9 +19,11 @@ def parse_mueller_column_label(label:str,idx_start: int = 1):
     return return_mueller_indices,return_remainder_value
 
 def split_mueller_column_label(label: str,idx_start: int = 1)->tuple([str,Union[str,None]]):
-    mueller_label = re.match("[mM].*[\d][\d]",label)
+    mueller_match = re.match("[mM]_?[\d][\d]",label)
+    mueller_label  = None
+    if mueller_match is not None:
+        mueller_label = mueller_match.group()
     if mueller_label is not None:
-        mueller_label = mueller_label.string
         remainder_label = label.replace(mueller_label,"")
     else: remainder_label = None
     if remainder_label == "":remainder_label = None
@@ -34,11 +36,14 @@ def extract_digits_from_str(string: str)->tuple([int]):
 
 def extract_number_from_str(string: str)->int:
     '''Gets first number from string and returns it as a float'''
-    number = re.match('[\d]*(\.[\d]*)?',string)
-    return float(number)
+    number_str = re.match('-?[\d]*(\.[\d]*)?', string).group()
+    number = None
+    if number_str != "":
+        number = float(number_str)
+    return number
 
 
-def mueller_excel_to_dataarray(filepath):
+def mueller_excel_to_dataarray(filepath,verbose = False):
     '''Converts excel file to numpy array'''
     dataframe = pd.read_excel(filepath)
     array = dataframe.to_numpy()
@@ -50,12 +55,16 @@ def mueller_excel_to_dataarray(filepath):
     wavelength_idx = pu.get_index_in_list_containing_substring(columns_clean, 'wavelength')
     wavelength_array = copy.deepcopy(array[:,wavelength_idx])
     wavelength_label = columns[wavelength_idx]
-    mueller_array = np.delete(array,wavelength_idx,axis = 1)
+    mueller_array = array
     remainder_array = np.zeros(np.size(mueller_array,axis = 1))
     mueller_array_reshaped = np.zeros((4,4,np.size(mueller_array,axis = 0)))
     for i in range(np.size(mueller_array,axis= 1)):
         mueller_label = columns[i]
         mueller_indices,remainder_array[i] = parse_mueller_column_label(mueller_label)
-        mueller_array_reshaped[mueller_indices[0],mueller_indices[1],:] = mueller_array[:,i]
+        if mueller_indices[0] is not None:
+            if (verbose):
+                print("Mueller Indices: ",mueller_indices)
+                print("Remainder Value: ",remainder_array[i])
+            mueller_array_reshaped[mueller_indices[0],mueller_indices[1],:] = mueller_array[:,i]
     mueller_dataarray = xr.DataArray(mueller_array_reshaped,coords = {wavelength_label:wavelength_array},dims = ['row','column',wavelength_label])
     return mueller_dataarray
