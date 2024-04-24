@@ -6,7 +6,27 @@ from typing import Union
 import xarray as xr
 import re
 import warnings
+import setup
+import os
 '''Parse scripts for .xlsx files'''
+
+def load_exp_thickness_numpy(path = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\Thickness_Exp_Data\LCSO_ACD_thickness_data.xlsx"))):
+    exp_data = pd.read_excel(path)
+    exp_array = exp_data.to_numpy()
+    return exp_array
+
+def clean_exp_thickness_array(array):
+    '''Note: only for data structured precisely in the same way as LCSO_ACD_thickness_data.xlsx---not a general function
+    Returns cd in mdeg, thickness in  um'''
+    mean_cd = array[::2,1].astype(float)
+    mean_cd = mean_cd[~np.isnan(mean_cd)]
+    cd_std_err = array[::2,2].astype(float)
+    cd_std_err = cd_std_err[~np.isnan(cd_std_err)]
+    mean_thickness = array[::2,8].astype(float)
+    mean_thickness = mean_thickness[~np.isnan(mean_thickness)]
+    thickness_std_err = array[::2,9].astype(float)
+    thickness_std_err = thickness_std_err[~np.isnan(thickness_std_err)]
+    return mean_cd, cd_std_err,mean_thickness,thickness_std_err
 
 def parse_mueller_column_label(label:str,idx_start: int = 1):
     mueller_label,remainder_label = split_mueller_column_label(label)

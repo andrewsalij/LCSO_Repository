@@ -1,0 +1,84 @@
+
+
+ ___ __  _____  __ __  _____   _____
+|   Y  ||  _  ||  Y  ||  _  \ |  _  |
+|   |  ||. |  ||.    ||. |  / |. |  |
+ \_  _/ |. _  ||.\_/ ||. _  \ |. |  |
+  |: |  |: |  ||: |  ||: |   \|: |  |
+  |::|  |:.|:.||:.|:.||::.   /|::.  |
+  `--"  `-- --"`-- --"`-----" `-----"
+
+
+ <---> [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> [02] CORE Variables Setup
+ <---> [02.01] Unit cells
+ <---> [02.02] Symmetries
+ <---> [02.03] Reciprocal space
+ <---> [02.04] K-grid lattice
+ <---> Grid dimensions      :   4   5   5
+ <---> [02.05] Energies & Occupations
+ <---> [WARNING][X] Metallic system
+ <---> [03] Transferred momenta grid and indexing
+ <04s> [04] Dipoles
+ <04s> [DIP] Checking dipoles header
+ <04s> [WARNING] [r,Vnl^pseudo] included in position and velocity dipoles.
+ <04s> [WARNING] In case H contains other non local terms, these are neglected
+ <04s> [05] Optics
+ <04s> [LA] SERIAL linear algebra
+ <05s> [FFT-Rho] Mesh size:   35   42   35
+ <23s> [xc] Functional : Perdew, Burke & Ernzerhof SOL(X)+Perdew, Burke & Ernzerhof SOL(C)
+ <23s> [xc] LIBXC used to calculate xc functional
+ <41s> [WARNING] USPP corrections to rho gradient not implemented
+ <59s> [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+ <59s> [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+ <59s> [WARNING] The system is a metal but Drude term not included.
+ <59s> [DIP] Checking dipoles header
+ <01m-01s> [FFT-X] Mesh size:   35   42   35
+ <01m-13s> [X-CG] R(p) Tot o/o(of R):    352331   6135168       100
+ <01m-14s> [X] Upper matrix triangle filled
+ <01m-14s> Xo@q[1] |                                        | [000%] --(E) --(X)
+ <01m-37s> Xo@q[1] |#                                       | [002%] 23s(E) 15m-25s(X)
+ <02m-06s> Xo@q[1] |##                                      | [005%] 51s(E) 17m-17s(X)
+ <02m-47s> Xo@q[1] |###                                     | [007%] 01m-33s(E) 20m-40s(X)
+ <03m-30s> Xo@q[1] |####                                    | [010%] 02m-16s(E) 22m-40s(X)
+ <04m-21s> Xo@q[1] |#####                                   | [012%] 03m-07s(E) 24m-58s(X)
+ <05m-20s> Xo@q[1] |######                                  | [015%] 04m-05s(E) 27m-18s(X)
+ <06m-18s> Xo@q[1] |#######                                 | [017%] 05m-04s(E) 28m-57s(X)
+ <07m-21s> Xo@q[1] |########                                | [020%] 06m-07s(E) 30m-35s(X)
+ <08m-31s> Xo@q[1] |#########                               | [022%] 07m-17s(E) 32m-23s(X)
+ <09m-42s> Xo@q[1] |##########                              | [025%] 08m-27s(E) 33m-51s(X)
+ <11m-00s> Xo@q[1] |###########                             | [027%] 09m-46s(E) 35m-32s(X)
+ <12m-26s> Xo@q[1] |############                            | [030%] 11m-12s(E) 37m-19s(X)
+ <13m-55s> Xo@q[1] |#############                           | [032%] 12m-40s(E) 39m-01s(X)
+ <15m-10s> Xo@q[1] |##############                          | [035%] 13m-56s(E) 39m-49s(X)
+ <16m-09s> Xo@q[1] |###############                         | [037%] 14m-55s(E) 39m-48s(X)
+ <16m-50s> Xo@q[1] |################                        | [040%] 15m-35s(E) 38m-59s(X)
+ <17m-19s> Xo@q[1] |#################                       | [042%] 16m-05s(E) 37m-51s(X)
+ <17m-48s> Xo@q[1] |##################                      | [045%] 16m-34s(E) 36m-48s(X)
+ <18m-16s> Xo@q[1] |###################                     | [047%] 17m-01s(E) 35m-51s(X)
+ <18m-54s> Xo@q[1] |####################                    | [050%] 17m-40s(E) 35m-20s(X)
+ <19m-30s> Xo@q[1] |#####################                   | [052%] 18m-16s(E) 34m-47s(X)
+ <19m-58s> Xo@q[1] |######################                  | [055%] 18m-44s(E) 34m-04s(X)
+ <20m-34s> Xo@q[1] |#######################                 | [057%] 19m-20s(E) 33m-38s(X)
+ <21m-10s> Xo@q[1] |########################                | [060%] 19m-56s(E) 33m-14s(X)
+ <21m-47s> Xo@q[1] |#########################               | [062%] 20m-32s(E) 32m-52s(X)
+ <22m-26s> Xo@q[1] |##########################              | [065%] 21m-12s(E) 32m-37s(X)
+ <23m-06s> Xo@q[1] |###########################             | [067%] 21m-52s(E) 32m-24s(X)
+ <23m-49s> Xo@q[1] |############################            | [070%] 22m-35s(E) 32m-15s(X)
+ <24m-33s> Xo@q[1] |#############################           | [072%] 23m-19s(E) 32m-09s(X)
+ <25m-17s> Xo@q[1] |##############################          | [075%] 24m-03s(E) 32m-04s(X)
+ <26m-03s> Xo@q[1] |###############################         | [077%] 24m-49s(E) 32m-02s(X)
+ <26m-45s> Xo@q[1] |################################        | [080%] 25m-30s(E) 31m-53s(X)
+ <27m-06s> Xo@q[1] |#################################       | [082%] 25m-52s(E) 31m-21s(X)
+ <27m-29s> Xo@q[1] |##################################      | [085%] 26m-14s(E) 30m-52s(X)
+ <27m-45s> Xo@q[1] |###################################     | [087%] 26m-30s(E) 30m-18s(X)
+ <27m-58s> Xo@q[1] |####################################    | [090%] 26m-44s(E) 29m-42s(X)
+ <28m-12s> Xo@q[1] |#####################################   | [092%] 26m-57s(E) 29m-09s(X)
+ <28m-26s> Xo@q[1] |######################################  | [095%] 27m-11s(E) 28m-37s(X)
+ <28m-40s> Xo@q[1] |####################################### | [097%] 27m-26s(E) 28m-08s(X)
+ <28m-55s> Xo@q[1] |########################################| [100%] 27m-41s(E) 27m-41s(X)
+ <28m-55s> X@q[1] |                                        | [000%] --(E) --(X)
+ <28m-58s> X@q[1] |########################################| [100%] 02s(E) 02s(X)
+ <29m-01s> [06] Timing Overview
+ <29m-01s> [07] Game Over & Game summary
+ <29m-01s> [TIMING]            [Time-Profile]: 29m-01s
