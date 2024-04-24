@@ -35,23 +35,25 @@ def acd_m03_m00(z,d1, d2, b1, b2):
     numerator = (d1*b2-d2*b1)*(np.cosh((i_p*z).astype(float)) - np.cos((r_p*z).astype(float)))
     denominator = (r_p**2+d_sq)*np.cosh((i_p*z).astype(float))+(i_p**2-d_sq)*np.cos((r_p*z).astype(float))
     return 2*32980/np.log(10)*numerator/denominator
-pol_array_init = np.array([0.002457858009912546, -0.016904866062193293, 0.0007818864684568216, 0.02871168967186483],
-                          dtype = float)
+pol_array_init = np.array([0.013389717511370684, 0.013202875400325859, 0.017048385109910382, 0.04074044653199602],
+                          dtype = float) #500 nm wavelength polarizance smm params
 
-thickness_array = np.linspace(0, 50, 101)
+thickness_um_array = np.linspace(0, 40, 101)
+thickness_eV_array = thickness_um_array*1e-6/(1.973e-7)
+mean_thickness_eV = mean_thickness*1e-6/(1.973e-7)
 
-popt_simple, pcov_simple = op.curve_fit(m03_brown, mean_thickness, mean_cd, p0=pol_array_init, maxfev=10000)
+popt_simple, pcov_simple = op.curve_fit(m03_brown, mean_thickness_eV, mean_cd, p0=pol_array_init, maxfev=10000)
 std_simple= np.sqrt(np.diag(pcov_simple))
-cd_fit_simple = m03_brown(thickness_array,*popt_simple)
+cd_fit_simple = m03_brown(thickness_eV_array,*popt_simple)
 
-popt_acd, pcov_acd = op.curve_fit(acd_m03_m00, mean_thickness, mean_cd, p0=pol_array_init, maxfev=10000)
+popt_acd, pcov_acd = op.curve_fit(acd_m03_m00, mean_thickness_eV, mean_cd, p0=pol_array_init, maxfev=10000)
 std_acd = np.sqrt(np.diag(pcov_acd))
-cd_fit_acd = acd_m03_m00(thickness_array,*popt_acd)
+cd_fit_acd = acd_m03_m00(thickness_eV_array,*popt_acd)
 
 fig,ax = plt.subplots()
 ax.scatter(mean_thickness,mean_cd,color = "black",label = "Experiment")
-ax.plot(thickness_array,cd_fit_simple,linestyle = "--",color = "black")
-ax.plot(thickness_array,cd_fit_acd,linestyle = "dotted",color = "black")
+ax.plot(thickness_um_array,cd_fit_simple,linestyle = "--",color = "black")
+ax.plot(thickness_um_array,cd_fit_acd,linestyle = "dotted",color = "black")
 ax.set_xlabel("Thickness (um)")
 ax.set_ylabel("CD (mdeg)")
 fig.show()
@@ -59,9 +61,9 @@ fig.show()
 
 save_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","Fit_Thickness"))
 os.makedirs(save_path,exist_ok = True)
-np.save(os.sep.join((save_path,"thickness_fit_simple.npy")),thickness_array)
+np.save(os.sep.join((save_path,"thickness_fit_simple.npy")),thickness_um_array)
 np.save(os.sep.join((save_path,"cd_fit_simple.npy")),cd_fit_simple)
-np.save(os.sep.join((save_path,"thickness_fit_acd.npy")),thickness_array)
+np.save(os.sep.join((save_path,"thickness_fit_acd.npy")),thickness_um_array)
 np.save(os.sep.join((save_path,"cd_fit_acd.npy")),cd_fit_acd)
 
 
