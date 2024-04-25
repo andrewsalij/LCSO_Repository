@@ -71,7 +71,7 @@ def extract_number_from_str(string: str)->int:
     return number
 
 
-def mueller_excel_to_dataarray(filepath,verbose = False):
+def mueller_excel_to_dataarray(filepath,verbose = False,normalized = False):
     '''Converts excel file to xarray datarray'''
     dataframe = pd.read_excel(filepath)
     array = dataframe.to_numpy()
@@ -94,5 +94,7 @@ def mueller_excel_to_dataarray(filepath,verbose = False):
                 print("Mueller Indices: ",mueller_indices)
                 print("Remainder Value: ",remainder_array[i])
             mueller_array_reshaped[mueller_indices[0],mueller_indices[1],:] = mueller_array[:,i]
+    if (normalized):
+        mueller_array_reshaped[0,0,:] = 1
     mueller_dataarray = xr.DataArray(mueller_array_reshaped,coords = {wavelength_label:wavelength_array},dims = ['row','column',wavelength_label])
     return mueller_dataarray

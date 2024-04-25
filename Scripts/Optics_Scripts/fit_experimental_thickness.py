@@ -10,7 +10,9 @@ mean_cd, cd_std_err,mean_thickness,thickness_std_err = parse_excel.clean_exp_thi
 #removing outlier data (thickness > 40 um)
 idx_to_use = np.argwhere(mean_thickness<40).flatten()
 mean_cd = mean_cd[idx_to_use]
+mean_cd = mean_cd[::1]
 mean_thickness = mean_thickness[idx_to_use]
+mean_thickness = mean_thickness[::1]
 def get_pol_params(d1, d2, b1, b2):
     d_vec = np.array([d1,d2])
     b_vec = np.array([b1,b2])
@@ -46,7 +48,7 @@ popt_simple, pcov_simple = op.curve_fit(m03_brown, mean_thickness_eV, mean_cd, p
 std_simple= np.sqrt(np.diag(pcov_simple))
 cd_fit_simple = m03_brown(thickness_eV_array,*popt_simple)
 
-popt_acd, pcov_acd = op.curve_fit(acd_m03_m00, mean_thickness_eV, mean_cd, p0=pol_array_init, maxfev=10000)
+popt_acd, pcov_acd = op.curve_fit(acd_m03_m00, mean_thickness_eV, mean_cd, p0=pol_array_init, maxfev=10000,bounds=(0,np.inf))
 std_acd = np.sqrt(np.diag(pcov_acd))
 cd_fit_acd = acd_m03_m00(thickness_eV_array,*popt_acd)
 
