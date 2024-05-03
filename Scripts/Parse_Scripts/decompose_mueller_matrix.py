@@ -33,4 +33,12 @@ wavelength_array_to_plot = wavelength_array[idx_start:idx_end]
 mueller.mueller_matrix_grid_plot(wavelength_array_to_plot,mueller_array_to_plot)
 
 mueller.mueller_matrix_grid_plot(wavelength_array_to_plot,mueller_decomposed[:,:,0,idx_start:idx_end]) #plotting first Cloude decomposed matrix
-mueller.mueller_matrix_grid_plot(wavelength_array_to_plot,mueller_decomposed[:,:,1,idx_start:idx_end]) #plotting first Cloude decomposed matrix
+mueller.mueller_matrix_grid_plot(wavelength_array_to_plot,mueller_decomposed[:,:,1,idx_start:idx_end]) #plotting second Cloude decomposed matrix
+
+flip_matrix = np.array([[1,1,1,1],[1,1,1,1],[-1,-1,1,1],[-1,-1,1,1]])
+flip_matrix_stack = np.dstack([flip_matrix]*np.size(mueller_decomposed,3))
+
+refl_accounted = mueller_decomposed[:,:,0,:]*flip_matrix_stack
+#note-this doesn't have a clean mapping for reflection measurements
+logaritmic_decomp = mueller.logm_mueller_matrix_stack(refl_accounted[:,:,idx_start:idx_end])
+mueller.mueller_matrix_grid_plot(wavelength_array_to_plot,logaritmic_decomp)
