@@ -1,0 +1,52 @@
+
+
+  __ __  ____ ___ ___ ____   ___
+ |  |  |/    |   |   |    \ /   \
+ |  |  |  o  | _   _ |  o  )     |
+ |  ~  |     |  \_/  |     |  O  |
+ |___, |  _  |   |   |  O  |     |
+ |     |  |  |   |   |     |     |
+ |____/|__|__|___|___|_____|\___/
+
+
+ <---> [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> [02] CORE Variables Setup
+ <---> [02.01] Unit cells
+ <---> [02.02] Symmetries
+ <---> [02.03] Reciprocal space
+ <---> [02.04] K-grid lattice
+ <---> Grid dimensions      :   6   6   6
+ <---> [02.05] Energies & Occupations
+ <---> [WARNING][X] Metallic system
+ <---> [03] Transferred momenta grid and indexing
+ <---> [04] Dipoles
+ <---> [DIP] Checking dipoles header
+ <---> [WARNING]Incompatible serial number for ./ALDA_YZ//ndb.dipoles
+ <---> [DIP] Database not correct or missing. To be computed
+ <---> [x,Vnl] computed using 1764 projectors
+ <---> [WARNING] [x,Vnl] slows the Dipoles computation. To neglect it rename the ns.kb_pp file
+ <03s> Dipoles: P, V and iR (T) |                                        | [000%] --(E) --(X)
+ <05h-35m> Dipoles: P, V and iR (T) |#                                       | [002%] 05h-35m(E) 09d-07h-29m(X)
+ <10h-29m> Dipoles: P, V and iR (T) |##                                      | [005%] 10h-29m(E) 08d-17h-53m(X)
+ <15h-25m> Dipoles: P, V and iR (T) |###                                     | [007%] 15h-25m(E) 08d-13h-43m(X)
+ <20h-20m> Dipoles: P, V and iR (T) |####                                    | [010%] 20h-20m(E) 08d-11h-24m(X)
+ <01d-01h-15m> Dipoles: P, V and iR (T) |#####                                   | [012%] 01d-01h-15m(E) 08d-10h-03m(X)
+ <01d-06h-10m> Dipoles: P, V and iR (T) |######                                  | [015%] 01d-06h-10m(E) 08d-09h-08m(X)
+ <01d-11h-04m> Dipoles: P, V and iR (T) |#######                                 | [017%] 01d-11h-04m(E) 08d-08h-27m(X)
+ <01d-15h-59m> Dipoles: P, V and iR (T) |########                                | [020%] 01d-15h-59m(E) 08d-07h-57m(X)
+ <01d-20h-54m> Dipoles: P, V and iR (T) |#########                               | [022%] 01d-20h-54m(E) 08d-07h-36m(X)
+ <02d-01h-49m> Dipoles: P, V and iR (T) |##########                              | [025%] 02d-01h-49m(E) 08d-07h-17m(X)
+ <02d-07h-15m> Dipoles: P, V and iR (T) |###########                             | [027%] 02d-07h-15m(E) 08d-08h-56m(X)
+ <02d-12h-10m> Dipoles: P, V and iR (T) |############                            | [030%] 02d-12h-10m(E) 08d-08h-33m(X)
+ <02d-17h-05m> Dipoles: P, V and iR (T) |#############                           | [032%] 02d-17h-05m(E) 08d-08h-16m(X)
+ <02d-22h-00m> Dipoles: P, V and iR (T) |##############                          | [035%] 02d-22h-00m(E) 08d-08h-00m(X)
+ <03d-02h-55m> Dipoles: P, V and iR (T) |###############                         | [037%] 03d-02h-54m(E) 08d-07h-46m(X)
+ <03d-07h-49m> Dipoles: P, V and iR (T) |################                        | [040%] 03d-07h-49m(E) 08d-07h-33m(X)
+ <03d-12h-43m> Dipoles: P, V and iR (T) |#################                       | [042%] 03d-12h-43m(E) 08d-07h-21m(X)
+ <03d-17h-36m> Dipoles: P, V and iR (T) |##################                      | [045%] 03d-17h-36m(E) 08d-07h-08m(X)
+ <03d-21h-46m> Dipoles: P, V and iR (T) |###################                     | [047%] 03d-21h-46m(E) 08d-05h-24m(X)
+ <04d-02h-35m> Dipoles: P, V and iR (T) |####################                    | [050%] 04d-02h-35m(E) 08d-05h-11m(X)
+ <04d-08h-01m> Dipoles: P, V and iR (T) |#####################                   | [052%] 04d-08h-01m(E) 08d-06h-08m(X)
+ <04d-12h-55m> Dipoles: P, V and iR (T) |######################                  | [055%] 04d-12h-55m(E) 08d-06h-03m(X)
+ <04d-17h-50m> Dipoles: P, V and iR (T) |#######################                 | [057%] 04d-17h-50m(E) 08d-05h-59m(X)
+ <04d-22h-45m> Dipoles: P, V and iR (T) |########################                | [060%] 04d-22h-45m(E) 08d-05h-55m(X)

@@ -1,0 +1,51 @@
+#                                                                     
+# ooooo   oooo ..     ooo        ooo ooooooooo.    .oooo.             
+#  `88.   .8" .88.    `88.       .88 `88"   `Y8b  dP"  `Yb            
+#   `88. .8" .8"88.    888b     d"88  88     888 88      88           
+#    `88.8" .8" `88.   8 Y88. .P  88  88oooo888" 88      88           
+#     `88" .88ooo888.  8  `888"   88  88    `88b 88      88           
+#      88 .8"     `88. 8    Y     88  88    .88P `8b    d8"           
+#     o88o88o      888o8          88 o88bood8P"   `Ybod8P"            
+#                                                                     
+#                                                                     
+# Version 5.1.0 Revision 21422 Hash (prev commit) fde6e2a07           
+#                      Branch is (HEAD                                
+#                   MPI+HDF5_MPI_IO Build                             
+#                 http://www.yambo-code.org                           
+#
+# Absorption @ Q(1):  0.707106769      0.00000000     0.707106769    [q->0 direction]
+#
+# 
+# 05/15/2024 at 19:48 yambo @ qnode0211 [start]
+# 05/16/2024 at 03:58                   [end]
+#  
+# Timing   [Min/Max/Average]: 08d-10h-49m/08d-10h-49m/08d-10h-49m
+#
+# .-Input file  alda_xz.in
+# | optics                           # [R] Linear Response optical properties
+# | chi                              # [R][CHI] Dyson equation for Chi.
+# | tddft                            # [R][K] Use TDDFT kernel
+# | ElecTemp= 0.025861         eV    # Electronic Temperature
+# | BoseTemp= 0.025861         eV    # Bosonic Temperature
+# | FFTGvecs= 126971           RL    # [FFT] Plane-waves
+# | Chimod= "ALDA"                   # [X] IP/Hartree/ALDA/LRC/PF/BSfxc
+# | FxcGRLc=  51               RL    # [TDDFT] XC-kernel RL size
+# | NGsBlkXd=  51              RL    # [Xd] Response block size
+# | % QpntsRXd
+# |  1 | 1 |                             # [Xd] Transferred momenta
+# | %
+# | % BndsRnXd
+# |     1 |  616 |                       # [Xd] Polarization function bands
+# | %
+# | GrFnTpXd= "R"                    # [Xd] Green`s function (T)ordered,(R)etarded,(r)senant,(a)ntiresonant [T, R, r, Ta, Ra]
+# | % EnRngeXd
+# |   0.00000 | 10.00000 |         eV    # [Xd] Energy range
+# | %
+# | % DmRngeXd
+# |  0.050000 | 0.050000 |         eV    # [Xd] Damping range
+# | %
+# | ETStpsXd= 2000                   # [Xd] Total Energy steps
+# | % LongDrXd
+# |  1.000000 | 0.000000 | 1.000000 |        # [Xd] [cc] Electric Field
+# | %
+# | DipComputed= "R V P"             # [DIP] [default R P V; extra P2 Spin Orb]

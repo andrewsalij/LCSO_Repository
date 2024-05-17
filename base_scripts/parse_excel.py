@@ -20,13 +20,17 @@ def clean_exp_thickness_array(array):
     Returns cd in mdeg, thickness in  um'''
     mean_cd = array[::2,1].astype(float)
     mean_cd = mean_cd[~np.isnan(mean_cd)]
+    front_cd = array[::2,3].astype(float)
+    back_cd = array[1::2,3].astype(float)
+    front_std_err = array[::2,4].astype(float)
+    back_std_err = array[1::2,4].astype(float)
     cd_std_err = array[::2,2].astype(float)
     cd_std_err = cd_std_err[~np.isnan(cd_std_err)]
     mean_thickness = array[::2,8].astype(float)
     mean_thickness = mean_thickness[~np.isnan(mean_thickness)]
     thickness_std_err = array[::2,9].astype(float)
     thickness_std_err = thickness_std_err[~np.isnan(thickness_std_err)]
-    return mean_cd, cd_std_err,mean_thickness,thickness_std_err
+    return mean_cd, cd_std_err,mean_thickness,thickness_std_err,front_cd,back_cd,front_std_err,back_std_err
 
 def parse_mueller_column_label(label:str,idx_start: int = 1):
     mueller_label,remainder_label = split_mueller_column_label(label)

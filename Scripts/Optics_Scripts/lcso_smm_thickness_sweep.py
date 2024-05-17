@@ -7,8 +7,9 @@ import berremueller.dielectric_tensor as dt
 import ruamel.yaml as yaml
 import setup
 import os
+import Scripts.lcso_params as lcso_params
 "Scattering matrix calculations for LCSO w/ various thicknesses. Transfer matrices hit an instability "
-filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\ALDA_PBEsol"))
+filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
 save_path = os.sep.join((setup.BASE_DIR,r"Data\Modeling_Data\SMM_Thickness"))
 os.makedirs(save_path,exist_ok = True)
 data_set = "alda"  #'alda' or 'lrc'
@@ -33,15 +34,14 @@ quat = dt.multiply_quaternion(quat,dt.axis_angle_to_quaternion(axis_angle_3))
 dielectric_tensor = dt.rotate_2D_tensor(quat,dielectric_tensor,rot_type="quat")
 
 
-e_inf = 200
+e_inf = lcso_params.lcso_e_inf
 for i in np.arange(3):
     dielectric_tensor[i,i,:] = dielectric_tensor[i,i,:]+e_inf
 
-wl_to_use = 500
+wl_to_use = 635
 wl_nm_array = np.array([wl_to_use]) #Katherine's laser wavelength
 wl_str = str(wl_nm_array[0])
 title_str = str(np.round(quat,decimals=2).tolist())+r"$\epsilon_\infty$ : "+str(e_inf)+" at "+wl_str+" nm"
-
 
 
 thickness_nm_array = np.linspace(100,40000,501)
@@ -51,7 +51,7 @@ for i in np.arange(np.size(thickness_nm_array)):
     thickness_nm = thickness_nm_array[i]
     refl_matrix,trans_matrix = bm.characterize_solo_sample_ps(dielectric_tensor,wl_nm_array,spec,thickness_nm)
 
-    mueller_mat,t_set,t_l,t_r,r_l,r_r = bm. mueller_matrix_suite_from_refl_trans_amplitude_matrices_basis_ps(refl_matrix,trans_matrix)
+    mueller_mat,t_set,t_l,t_r,r_l,r_r = bm.mueller_matrix_suite_from_refl_trans_amplitude_matrices_basis_ps(refl_matrix,trans_matrix)
     cd_mdeg = np.log10(t_r/t_l)*32980
     cd_mdeg_array[i] = cd_mdeg
     abs_avg = (-np.log10(t_r)-np.log10(t_l))/2
@@ -65,6 +65,7 @@ plt.savefig(save_path+"smm_cd_lcso_thickness_long.png",dpi = 600)
 plt.show()
 
 linear_optics = berremueller.dielectric_tensor.linear_optics_from_dielectric_tensor(dielectric_tensor,spec)
+
 
 wvl_idx = np.argmin(np.abs(berremueller.dielectric_tensor.eV_to_nm(spec)-wl_to_use))
 

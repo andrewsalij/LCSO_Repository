@@ -1,0 +1,133 @@
+
+
+ __   __  _______  __   __  _______  _______
+|  | |  ||   _   ||  |_|  ||  _    ||       |
+|  |_|  ||  |_|  ||       || |_|   ||   _   |
+|       ||       ||       ||       ||  | |  |
+|_     _||       ||       ||  _   | |  |_|  |
+  |   |  |   _   || ||_|| || |_|   ||       |
+  |___|  |__| |__||_|   |_||_______||_______|
+
+
+ <---> [01] MPI/OPENMP structure, Files & I/O Directories
+ <---> [02] CORE Variables Setup
+ <---> [02.01] Unit cells
+ <---> [02.02] Symmetries
+ <---> [02.03] Reciprocal space
+ <---> [02.04] K-grid lattice
+ <---> Grid dimensions      :   6   6   6
+ <---> [02.05] Energies & Occupations
+ <---> [WARNING][X] Metallic system
+ <---> [03] Transferred momenta grid and indexing
+ <---> [04] Dipoles
+ <---> [DIP] Checking dipoles header
+ <---> [WARNING]Incompatible serial number for ./ALDA_XZ//ndb.dipoles
+ <---> [DIP] Database not correct or missing. To be computed
+ <---> [x,Vnl] computed using 1764 projectors
+ <---> [WARNING] [x,Vnl] slows the Dipoles computation. To neglect it rename the ns.kb_pp file
+ <03s> Dipoles: P, V and iR (T) |                                        | [000%] --(E) --(X)
+ <05h-36m> Dipoles: P, V and iR (T) |#                                       | [002%] 05h-36m(E) 09d-08h-30m(X)
+ <10h-33m> Dipoles: P, V and iR (T) |##                                      | [005%] 10h-33m(E) 08d-19h-16m(X)
+ <15h-28m> Dipoles: P, V and iR (T) |###                                     | [007%] 15h-28m(E) 08d-14h-16m(X)
+ <20h-22m> Dipoles: P, V and iR (T) |####                                    | [010%] 20h-22m(E) 08d-11h-45m(X)
+ <01d-01h-19m> Dipoles: P, V and iR (T) |#####                                   | [012%] 01d-01h-19m(E) 08d-10h-37m(X)
+ <01d-06h-14m> Dipoles: P, V and iR (T) |######                                  | [015%] 01d-06h-14m(E) 08d-09h-38m(X)
+ <01d-11h-08m> Dipoles: P, V and iR (T) |#######                                 | [017%] 01d-11h-08m(E) 08d-08h-50m(X)
+ <01d-16h-04m> Dipoles: P, V and iR (T) |########                                | [020%] 01d-16h-03m(E) 08d-08h-19m(X)
+ <01d-21h-03m> Dipoles: P, V and iR (T) |#########                               | [022%] 01d-21h-02m(E) 08d-08h-13m(X)
+ <02d-01h-59m> Dipoles: P, V and iR (T) |##########                              | [025%] 02d-01h-59m(E) 08d-07h-59m(X)
+ <02d-07h-28m> Dipoles: P, V and iR (T) |###########                             | [027%] 02d-07h-27m(E) 08d-09h-41m(X)
+ <02d-12h-25m> Dipoles: P, V and iR (T) |############                            | [030%] 02d-12h-25m(E) 08d-09h-23m(X)
+ <02d-17h-22m> Dipoles: P, V and iR (T) |#############                           | [032%] 02d-17h-22m(E) 08d-09h-08m(X)
+ <02d-22h-18m> Dipoles: P, V and iR (T) |##############                          | [035%] 02d-22h-18m(E) 08d-08h-53m(X)
+ <03d-03h-15m> Dipoles: P, V and iR (T) |###############                         | [037%] 03d-03h-15m(E) 08d-08h-41m(X)
+ <03d-08h-12m> Dipoles: P, V and iR (T) |################                        | [040%] 03d-08h-12m(E) 08d-08h-31m(X)
+ <03d-13h-09m> Dipoles: P, V and iR (T) |#################                       | [042%] 03d-13h-09m(E) 08d-08h-21m(X)
+ <03d-18h-07m> Dipoles: P, V and iR (T) |##################                      | [045%] 03d-18h-07m(E) 08d-08h-17m(X)
+ <03d-22h-19m> Dipoles: P, V and iR (T) |###################                     | [047%] 03d-22h-19m(E) 08d-06h-33m(X)
+ <04d-03h-12m> Dipoles: P, V and iR (T) |####################                    | [050%] 04d-03h-12m(E) 08d-06h-24m(X)
+ <04d-08h-42m> Dipoles: P, V and iR (T) |#####################                   | [052%] 04d-08h-42m(E) 08d-07h-27m(X)
+ <04d-13h-41m> Dipoles: P, V and iR (T) |######################                  | [055%] 04d-13h-41m(E) 08d-07h-26m(X)
+ <04d-18h-40m> Dipoles: P, V and iR (T) |#######################                 | [057%] 04d-18h-39m(E) 08d-07h-25m(X)
+ <04d-23h-38m> Dipoles: P, V and iR (T) |########################                | [060%] 04d-23h-38m(E) 08d-07h-24m(X)
+ <05d-04h-37m> Dipoles: P, V and iR (T) |#########################               | [062%] 05d-04h-37m(E) 08d-07h-23m(X)
+ <05d-09h-36m> Dipoles: P, V and iR (T) |##########################              | [065%] 05d-09h-36m(E) 08d-07h-23m(X)
+ <05d-14h-33m> Dipoles: P, V and iR (T) |###########################             | [067%] 05d-14h-33m(E) 08d-07h-20m(X)
+ <05d-19h-31m> Dipoles: P, V and iR (T) |############################            | [070%] 05d-19h-31m(E) 08d-07h-19m(X)
+ <06d-00h-30m> Dipoles: P, V and iR (T) |#############################           | [072%] 06d-00h-30m(E) 08d-07h-18m(X)
+ <06d-05h-28m> Dipoles: P, V and iR (T) |##############################          | [075%] 06d-05h-28m(E) 08d-07h-18m(X)
+ <06d-10h-53m> Dipoles: P, V and iR (T) |###############################         | [077%] 06d-10h-53m(E) 08d-07h-51m(X)
+ <06d-15h-05m> Dipoles: P, V and iR (T) |################################        | [080%] 06d-15h-05m(E) 08d-06h-51m(X)
+ <06d-20h-03m> Dipoles: P, V and iR (T) |#################################       | [082%] 06d-20h-03m(E) 08d-06h-51m(X)
+ <07d-01h-01m> Dipoles: P, V and iR (T) |##################################      | [085%] 07d-01h-01m(E) 08d-06h-50m(X)
+ <07d-06h-00m> Dipoles: P, V and iR (T) |###################################     | [087%] 07d-05h-59m(E) 08d-06h-51m(X)
+ <07d-10h-58m> Dipoles: P, V and iR (T) |####################################    | [090%] 07d-10h-58m(E) 08d-06h-51m(X)
+ <07d-15h-56m> Dipoles: P, V and iR (T) |#####################################   | [092%] 07d-15h-56m(E) 08d-06h-51m(X)
+ <07d-20h-55m> Dipoles: P, V and iR (T) |######################################  | [095%] 07d-20h-55m(E) 08d-06h-51m(X)
+ <08d-01h-52m> Dipoles: P, V and iR (T) |####################################### | [097%] 08d-01h-52m(E) 08d-06h-50m(X)
+ <08d-06h-50m> Dipoles: P, V and iR (T) |########################################| [100%] 08d-06h-50m(E) 08d-06h-50m(X)
+ <08d-06h-51m> [DIP] Writing dipoles header
+ <08d-06h-51m> [WARNING] [r,Vnl^pseudo] included in position and velocity dipoles.
+ <08d-06h-51m> [WARNING] In case H contains other non local terms, these are neglected
+ <08d-06h-51m> [05] Optics
+ <08d-06h-51m> [LA] SERIAL linear algebra
+ <08d-06h-51m> [FFT-Rho] Mesh size:   49   49  114
+ <08d-06h-52m> [xc] Functional : Perdew, Burke & Ernzerhof SOL(X)+Perdew, Burke & Ernzerhof SOL(C)
+ <08d-06h-52m> [xc] LIBXC used to calculate xc functional
+ <08d-06h-54m> [WARNING] USPP corrections to rho gradient not implemented
+ <08d-07h-00m> [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+ <08d-07h-00m> [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+ <08d-07h-00m> [WARNING] The system is a metal but Drude term not included.
+ <08d-07h-00m> [DIP] Checking dipoles header
+ <08d-07h-00m> [FFT-X] Mesh size:   49   49  114
+ <08d-07h-02m> [X-CG] R(p) Tot o/o(of R):    134849  11848909       100
+ <08d-07h-02m> [X] Upper matrix triangle filled
+ <08d-07h-02m> Xo@q[1] |                                        | [000%] --(E) --(X)
+ <08d-07h-03m> Xo@q[1] |#                                       | [002%] 01m-01s(E) 40m-51s(X)
+ <08d-07h-04m> Xo@q[1] |##                                      | [005%] 02m-48s(E) 56m-02s(X)
+ <08d-07h-08m> Xo@q[1] |###                                     | [007%] 06m-49s(E) 01h-31m(X)
+ <08d-07h-12m> Xo@q[1] |####                                    | [010%] 09m-54s(E) 01h-39m(X)
+ <08d-07h-16m> Xo@q[1] |#####                                   | [012%] 14m-50s(E) 01h-58m(X)
+ <08d-07h-25m> Xo@q[1] |######                                  | [015%] 23m-52s(E) 02h-39m(X)
+ <08d-07h-37m> Xo@q[1] |#######                                 | [017%] 34m-57s(E) 03h-19m(X)
+ <08d-07h-45m> Xo@q[1] |########                                | [020%] 43m-17s(E) 03h-36m(X)
+ <08d-07h-53m> Xo@q[1] |#########                               | [022%] 50m-55s(E) 03h-46m(X)
+ <08d-08h-01m> Xo@q[1] |##########                              | [025%] 59m-49s(E) 03h-59m(X)
+ <08d-08h-08m> Xo@q[1] |###########                             | [027%] 01h-06m(E) 04h-01m(X)
+ <08d-08h-12m> Xo@q[1] |############                            | [030%] 01h-10m(E) 03h-55m(X)
+ <08d-08h-15m> Xo@q[1] |#############                           | [032%] 01h-13m(E) 03h-45m(X)
+ <08d-08h-17m> Xo@q[1] |##############                          | [035%] 01h-15m(E) 03h-36m(X)
+ <08d-08h-20m> Xo@q[1] |###############                         | [037%] 01h-18m(E) 03h-28m(X)
+ <08d-08h-21m> Xo@q[1] |################                        | [040%] 01h-19m(E) 03h-18m(X)
+ <08d-08h-22m> Xo@q[1] |#################                       | [042%] 01h-20m(E) 03h-10m(X)
+ <08d-08h-24m> Xo@q[1] |##################                      | [045%] 01h-22m(E) 03h-03m(X)
+ <08d-08h-26m> Xo@q[1] |###################                     | [047%] 01h-24m(E) 02h-58m(X)
+ <08d-08h-31m> Xo@q[1] |####################                    | [050%] 01h-29m(E) 02h-59m(X)
+ <08d-08h-34m> Xo@q[1] |#####################                   | [052%] 01h-32m(E) 02h-55m(X)
+ <08d-08h-37m> Xo@q[1] |######################                  | [055%] 01h-35m(E) 02h-53m(X)
+ <08d-08h-41m> Xo@q[1] |#######################                 | [057%] 01h-39m(E) 02h-52m(X)
+ <08d-08h-43m> Xo@q[1] |########################                | [060%] 01h-41m(E) 02h-49m(X)
+ <08d-08h-45m> Xo@q[1] |#########################               | [062%] 01h-43m(E) 02h-45m(X)
+ <08d-08h-47m> Xo@q[1] |##########################              | [065%] 01h-45m(E) 02h-42m(X)
+ <08d-08h-54m> Xo@q[1] |###########################             | [067%] 01h-52m(E) 02h-45m(X)
+ <08d-09h-02m> Xo@q[1] |############################            | [070%] 02h-00m(E) 02h-52m(X)
+ <08d-09h-08m> Xo@q[1] |#############################           | [072%] 02h-06m(E) 02h-54m(X)
+ <08d-09h-18m> Xo@q[1] |##############################          | [075%] 02h-16m(E) 03h-02m(X)
+ <08d-09h-33m> Xo@q[1] |###############################         | [077%] 02h-31m(E) 03h-14m(X)
+ <08d-09h-52m> Xo@q[1] |################################        | [080%] 02h-50m(E) 03h-33m(X)
+ <08d-10h-08m> Xo@q[1] |#################################       | [082%] 03h-06m(E) 03h-45m(X)
+ <08d-10h-18m> Xo@q[1] |##################################      | [085%] 03h-15m(E) 03h-50m(X)
+ <08d-10h-27m> Xo@q[1] |###################################     | [087%] 03h-25m(E) 03h-55m(X)
+ <08d-10h-34m> Xo@q[1] |####################################    | [090%] 03h-32m(E) 03h-56m(X)
+ <08d-10h-39m> Xo@q[1] |#####################################   | [092%] 03h-37m(E) 03h-55m(X)
+ <08d-10h-43m> Xo@q[1] |######################################  | [095%] 03h-41m(E) 03h-53m(X)
+ <08d-10h-46m> Xo@q[1] |####################################### | [097%] 03h-44m(E) 03h-50m(X)
+ <08d-10h-49m> Xo@q[1] |########################################| [100%] 03h-46m(E) 03h-46m(X)
+ <08d-10h-49m> X@q[1] |                                        | [000%] --(E) --(X)
+ <08d-10h-49m> X@q[1] |#######                                 | [017%] 05s(E) 27s(X)
+ <08d-10h-49m> X@q[1] |#######################                 | [057%] 10s(E) 17s(X)
+ <08d-10h-49m> X@q[1] |####################################### | [097%] 15s(E) 15s(X)
+ <08d-10h-49m> X@q[1] |########################################| [100%] 15s(E) 15s(X)
+ <08d-10h-49m> [06] Timing Overview
+ <08d-10h-49m> [07] Game Over & Game summary
+ <08d-10h-49m> [TIMING]            [Time-Profile]: 08d-10h-49m

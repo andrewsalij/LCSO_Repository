@@ -7,7 +7,8 @@ import os
 import base_scripts.parse_excel as parse_excel
 
 exp_array = parse_excel.load_exp_thickness_numpy()
-mean_cd, cd_std_err,mean_thickness,thickness_std_err = parse_excel.clean_exp_thickness_array(exp_array)
+mean_cd, cd_std_err,mean_thickness,thickness_std_err,front_cd,back_cd,front_std_err,back_std_err\
+    = parse_excel.clean_exp_thickness_array(exp_array)
 
 theory_smm_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","SMM_Thickness"))
 
@@ -21,14 +22,19 @@ cd_theory = np.load(os.sep.join((theory_smm_path,"cd_array.npy")))
 
 
 fig,ax = plt.subplots(nrows = 2,sharex = True)
-ax[0].errorbar(mean_thickness,mean_cd,xerr = thickness_std_err,yerr = cd_std_err,fmt = "ro",label = "Experiment")
+ax[0].errorbar(mean_thickness,mean_cd,xerr = thickness_std_err,yerr = cd_std_err,fmt = "ro",label = "Exp. Avg. Both Sides")
 ax[0].plot(thickness_fit,cd_fit,color = "black",linestyle = "--",label = "Empirical Fit")
+ax[0].legend(loc = "upper right")
+ax[0].set_ylim(0,6000)
 
 ax[1].plot(thickness_theory/1e3,cd_theory,color = "blue",label = "SMM")
 ax[1].set_xlabel("Thickness (microns)")
 ax[1].set_xlim(0,40)
+ax[1].set_ylim(0, 23000)
+ax[1].legend()
 
-fig.text(.01,.45,"CD (mdeg)",rotation = 90)
+
+fig.text(.01,.45,"|CD| (mdeg)",rotation = 90)
 
 sub_titles = ["a","b"]
 for i in range(2):
@@ -36,5 +42,6 @@ for i in range(2):
 
 
 fig.subplots_adjust(hspace = 0)
+fig.savefig("Figure_3_thickness_comparison")
 fig.show()
 
