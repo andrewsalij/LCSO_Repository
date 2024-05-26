@@ -1,0 +1,9 @@
+background white
+set bondRadiusMilliAngstroms  0
+color atoms TRANSLUCENT
+#vectors are arbitrary atm
+#see lcso_get_ld_lb_directors.py (there is a rotation that makes xz the xy plane)
+draw id "d_max_a" vector {3 0 3} {-2.6846952 0 2.11357947} width .4 color blue
+draw id "d_max_b" vector {3 0 3} {2.6846952 0 -2.11357947} width .4 color blue
+draw id "b_max_a" vector {3 0 3} {0.61955042 0 7.82821947} width .4 color red
+draw id "b_max_b" vector {3 0 3}{-0.61955042 0 -7.82821947} width .4 color red

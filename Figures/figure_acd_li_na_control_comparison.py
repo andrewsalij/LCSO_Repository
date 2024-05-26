@@ -52,7 +52,7 @@ control_linear_optics_list = get_both_linear_optics(data_control,spec_control)
 length_nm = 300
 
 fig,axes = plt.subplots(figsize = (8,3),sharey=True,ncols = 3)
-kwargs_base = {"figure":fig,"legend_fontsize":9,"ylim":[-10000,10000],"xlim":[0,5],"xlabel":"Energy (eV)","ylabel":""}
+kwargs_base = {"figure":fig,"legend_fontsize":9,"ylim":[-15000,15000],"xlim":[0,5],"xlabel":"Energy (eV)","ylabel":""}
 yps.plot_acd("",li_linear_optics_list,spec_li,length_nm/197.3,title = "LSCO",ax = axes[0],**kwargs_base)
 axes[0].plot(lcso_smm_spec,lcso_smm_cd_mdeg,color = "red",linestyle = "--")
 axes[0].plot(lcso_smm_spec,lcso_rev_smm_cd_mdeg,color = "blue",linestyle = "--")
@@ -64,9 +64,16 @@ yps.plot_acd("",control_linear_optics_list,spec_control,length_nm/197.3,title = 
 axes[2].plot(control_smm_spec,control_smm_cd_mdeg,color = "red",linestyle = "--")
 axes[2].plot(control_smm_spec,control_rev_smm_cd_mdeg,color = "blue",linestyle = "--")
 
+line_front = plt.Line2D([0],[0],color = "red",linestyle = "solid")
+line_back = plt.Line2D([0],[0],color = "blue",linestyle = "solid")
 
-
-
+line1 = plt.Line2D([0],[0],color = "black",linestyle = "solid")
+line2 = plt.Line2D([0],[0],color = "black",linestyle = "--")
+for i in range(3):
+    legend_init = axes[i].legend([line_front,line_back],["Front","Back"],loc = "upper left")
+    legend_add = axes[i].legend([line1,line2],["Pert.","SMM"],loc = "lower left")
+    axes[i].add_artist(legend_add)
+    axes[i].add_artist(legend_init)
 axes[0].set_ylabel("ACD (mdeg)")
 for i in range(3):
     axes[i].text(.04,1.02,["a)","b)","c)"][i],transform = axes[i].transAxes)

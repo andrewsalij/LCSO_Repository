@@ -113,7 +113,7 @@ def finish_plot(ax,filename,figure,xlim,ylim,xlabel,ylabel,title,legend,legend_f
     ax.set_ylabel(ylabel)
     ax.set_title(title)
     if tight_layout == True: figure.tight_layout()
-    if legend == True: ax.legend(fontsize=legend_fontsize)
+    if legend == True: legend_init = ax.legend(fontsize=legend_fontsize)
     figure.savefig(filename,dpi= 500)
     figure.show()
 
@@ -130,7 +130,7 @@ def plot_acd(filename,linear_optics_list,spec,length,
         unit_factor = 1
     #TODO add in other unit types
     if detail_level ==1:
-        length_factor = 1/2*length**2 #acd normally
+        length_factor = length**2 #acd normally-1/2 factor is in linear_optics()
     elif detail_level ==2:
         #TODO add in factor for higher order Mueller terms
         length_factor = 0
@@ -198,5 +198,35 @@ def get_3D_dielectric_info_from_yambo_output(filepath,folder,
     dielectric_info,spec_ev = full_data_list_to_3D_dielectric_info(data_list,pol_str_list)
     return dielectric_info,spec_ev
 
+def angle_to_director(angle):
+    return np.array([np.cos(angle),np.sin(angle),0])
+def get_ld_lb_directors(dielectric_tensor,angular_resolution = 180):
+    '''For a dielectric tensor, returns the vectors that maximize LD and LB for the 0,1 axes'''
+    eps_xy = dielectric_tensor[:2,:2] # only calculates for first two indices
+    angular_set = np.linspace(0,np.pi,angular_resolution)
+    rotation_matrix = np.zeros((2,2,angular_resolution))
+    rotation_matrix[0,0,:] = np.cos(angular_set)
+    rotation_matrix[0,1,:] = -np.sin(angular_set)
+    rotation_matrix[1,0,:] = np.sin(angular_set)
+    rotation_matrix[1,1,:] = np.cos(angular_set)
+    eps_xy_rot = np.zeros((2,2,angular_resolution),dtype = np.cdouble)
+    for i in range(angular_resolution):
+        eps_xy_rot[:,:,i] = np.einsum("ij,jk->ik", \
+              rotation_matrix[:,:,i], np.einsum("ij,jk->ik", eps_xy, np.transpose(rotation_matrix[:,:,i])))
+    lb_array = np.real(np.sqrt(eps_xy_rot[0,0,:])-np.sqrt(eps_xy_rot[1,1,:]))
+    ld_array = np.imag(np.sqrt(eps_xy_rot[0,0,:])-np.sqrt(eps_xy_rot[1,1,:]))
+    plt.plot(angular_set,ld_array,label = "LD")
+    plt.plot(angular_set,lb_array,label = "LB")
+    plt.xlabel("Angle (rad)")
+    plt.ylabel("LD/LB")
+    plt.legend()
+    plt.show()
+    ld_max_idx = np.argmax(ld_array)
+    lb_max_idx = np.argmax(lb_array)
+    ld_max_angle = angular_set[ld_max_idx]
+    lb_max_angle = angular_set[lb_max_idx]
+    ld_max_size = np.abs(ld_array[ld_max_idx])
+    lb_max_size = np.abs(lb_array[lb_max_idx])
+    return angle_to_director(ld_max_angle)*ld_max_size,angle_to_director(lb_max_angle)*lb_max_size
 
 

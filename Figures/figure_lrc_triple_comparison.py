@@ -10,6 +10,7 @@ import setup
 filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
 pol_str_list = ["_X","_Y","_Z"]
 
+data_alda = yps.parse_data(filepath,"ALDA",pol_str_list, calc_type = "alda")
 data_lrc_pt5 = yps.parse_data(filepath,"LRCpt5",pol_str_list,calc_type="lrc")
 data_lrc_1 = yps.parse_data(filepath,"LRC1",pol_str_list,calc_type="lrc")
 data_lrc_1pt5 = yps.parse_data(filepath,"LRC1pt5",pol_str_list,calc_type="lrc")
@@ -25,7 +26,7 @@ spec_lrc_um= dt.eV_to_nm(spec_lrc)*1e-3
 abs_lrc_pt5 = yps.convert_to_absorption_coefficient(data_lrc_pt5,spec_lrc,conversion_factor=micron_inv_conversion)
 abs_lrc_1 = yps.convert_to_absorption_coefficient(data_lrc_1,spec_lrc,conversion_factor=micron_inv_conversion)
 abs_lrc_1pt5 = yps.convert_to_absorption_coefficient(data_lrc_1pt5,spec_lrc,conversion_factor=micron_inv_conversion)
-
+abs_alda = yps.convert_to_absorption_coefficient(data_alda,spec_lrc,conversion_factor=micron_inv_conversion)
 
 abs_lrc_check = yps.convert_to_absorption_coefficient(data_lrc_pt5,2*np.pi/spec_lrc_um,conversion_factor=1)
 
@@ -71,3 +72,5 @@ leg1.set_title(r"$\alpha_{xc}$")
 fig.subplots_adjust(left=0.12)
 fig.savefig(fname+".png",dpi = 500)
 fig.show()
+
+

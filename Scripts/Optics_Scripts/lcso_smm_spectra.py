@@ -10,7 +10,8 @@ folder_list = ["ALDA_PBEsol","Na_ALDA_PBEsol","Li_control_ALDA_PBEsol"]
 for i in range(len(crystal_name_list)):
     crystal_name = crystal_name_list[i]
     filepath = os.sep.join((setup.BASE_DIR, "Data\Raw_Data\TDDFT", folder_list[i]))
-    save_path = os.sep.join((setup.BASE_DIR, r"Data\Modeling_Data\SMM_Set"))
+    save_path = os.sep.join((setup.BASE_DIR, r"Data\Modeling_Data\SMM_Set_100nm"))
+    os.makedirs(save_path, exist_ok=True)
     "Scattering matrix calculations for LCSO. Transfer matrices hit an instability "
     data_set = "alda"  # 'alda' or 'lrc'
     pol_str_list = ["_X", "_Y", "_Z", "_XY", "_XZ"]
@@ -38,7 +39,7 @@ for i in range(len(crystal_name_list)):
         dielectric_tensor = dt.rotate_2D_tensor(quat,dielectric_tensor,rot_type="quat")
 
         wl_nm_array = dt.eV_to_nm(spec)
-        thickness_nm = 300
+        thickness_nm = 100
 
         e_inf = lcso_params.lcso_e_inf
         for i in np.arange(3):
