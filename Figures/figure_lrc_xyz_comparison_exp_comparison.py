@@ -7,7 +7,7 @@ import os
 import setup
 '''Figure for ACD in inorganics paper--comparison polarization via  ALDA and ALDA+LRC '''
 
-plot_abs = False
+plot_abs = True
 filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
 pol_str_list = ["_X","_Y","_Z"]
 
@@ -79,9 +79,9 @@ for i in range(4):
     ax[i].set_title(titles[i],pad = -4)
 labels = [r"$x$",r"$y$",r"$z$"]
 if (plot_abs):
-    bbox = (.2,.95)
+    bbox = (.2,.90)
 else:
-    bbox = (.15,.95)
+    bbox = (.15,.90)
 leg1 = fig.legend(lines,labels,loc='upper left',bbox_to_anchor=bbox)
 leg1.set_title(r"Polarization")
 fig.subplots_adjust(left=0.1)

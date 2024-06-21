@@ -15,7 +15,7 @@ filepath_li = os.sep.join((filepath,"ALDA_PBEsol"))
 filepath_control = os.sep.join((filepath,"Li_control_ALDA_PBEsol"))
 filepath_na =os.sep.join((filepath,"Na_ALDA_PBEsol"))
 
-smm_datapath = os.sep.join((setup.BASE_DIR,"Data\Modeling_Data\SMM_Set"))
+smm_datapath = os.sep.join((setup.BASE_DIR,"Data\Modeling_Data\SMM_Set_100nm"))
 lcso_smm_cd_mdeg = np.load(os.sep.join((smm_datapath,"lcso_smm_cd_mdeg.npy")))
 lcso_rev_smm_cd_mdeg = np.load(os.sep.join((smm_datapath,"revlcso_smm_cd_mdeg.npy")))
 lcso_smm_spec=  np.load(os.sep.join((smm_datapath,"lcso_smm_spec.npy")))
@@ -49,10 +49,10 @@ li_linear_optics_list = get_both_linear_optics(data_li,spec_li)
 na_linear_optics_list = get_both_linear_optics(data_na,spec_na)
 control_linear_optics_list = get_both_linear_optics(data_control,spec_control)
 
-length_nm = 300
+length_nm = 100
 
 fig,axes = plt.subplots(figsize = (8,3),sharey=True,ncols = 3)
-kwargs_base = {"figure":fig,"legend_fontsize":9,"ylim":[-15000,15000],"xlim":[0,5],"xlabel":"Energy (eV)","ylabel":""}
+kwargs_base = {"figure":fig,"legend_fontsize":9,"ylim":[-2000,2000],"xlim":[0,5],"xlabel":"Energy (eV)","ylabel":""}
 yps.plot_acd("",li_linear_optics_list,spec_li,length_nm/197.3,title = "LSCO",ax = axes[0],**kwargs_base)
 axes[0].plot(lcso_smm_spec,lcso_smm_cd_mdeg,color = "red",linestyle = "--")
 axes[0].plot(lcso_smm_spec,lcso_rev_smm_cd_mdeg,color = "blue",linestyle = "--")
@@ -74,9 +74,9 @@ for i in range(3):
     legend_add = axes[i].legend([line1,line2],["Pert.","SMM"],loc = "lower left")
     axes[i].add_artist(legend_add)
     axes[i].add_artist(legend_init)
-axes[0].set_ylabel("ACD (mdeg)")
+axes[0].set_ylabel("CD (mdeg)")
 for i in range(3):
     axes[i].text(.04,1.02,["a)","b)","c)"][i],transform = axes[i].transAxes)
 fig.tight_layout()
-fig.savefig("lcso_acd_li_na_control_comparison.png",dpi = 500)
+fig.savefig("lcso_acd_li_na_control_comparison_100nm.png",dpi = 500)
 fig.show()

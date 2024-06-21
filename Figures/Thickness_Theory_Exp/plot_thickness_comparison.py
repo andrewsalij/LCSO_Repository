@@ -26,15 +26,17 @@ ax[0].errorbar(mean_thickness,mean_cd,xerr = thickness_std_err,yerr = cd_std_err
 ax[0].plot(thickness_fit,cd_fit,color = "black",linestyle = "--",label = "Empirical Fit")
 ax[0].legend(loc = "upper right")
 ax[0].set_ylim(0,6000)
+ax[0].set_ylabel("|CD| (mdeg)")
 
-ax[1].plot(thickness_theory/1e3,cd_theory,color = "blue",label = "SMM")
+ax[1].plot(thickness_theory/1e3,cd_theory/np.max(cd_theory),color = "blue",label = "SMM")
 ax[1].set_xlabel("Thickness (microns)")
+ax[1].set_ylabel("CD (norm.)")
 ax[1].set_xlim(0,40)
-ax[1].set_ylim(0, 23000)
+ax[1].set_ylim(0, 1.1)
 ax[1].legend()
 
 
-fig.text(.01,.45,"|CD| (mdeg)",rotation = 90)
+
 
 sub_titles = ["a","b"]
 for i in range(2):
@@ -42,6 +44,6 @@ for i in range(2):
 
 
 fig.subplots_adjust(hspace = 0)
-fig.savefig("Figure_3_thickness_comparison")
+fig.savefig("Figure_3_thickness_comparisonv2")
 fig.show()
 
