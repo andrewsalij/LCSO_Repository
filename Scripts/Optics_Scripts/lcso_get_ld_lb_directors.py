@@ -29,14 +29,16 @@ dielectric_tensor_init = np.copy(dielectric_tensor)
 spec_nm = dt.eV_to_nm(spec)
 axis_angle = np.array([1,0,0,-np.pi/2])
 quat = dt.axis_angle_to_quaternion(axis_angle)
+
+e_inf = lcso_params.lcso_e_inf
+for i in np.arange(3):
+    dielectric_tensor[i,i,:] = dielectric_tensor[i,i,:]+e_inf
 dielectric_tensor = dt.rotate_2D_tensor(quat,dielectric_tensor,rot_type="quat")
 
 assert dielectric_tensor_init[0,2,:].all() == dielectric_tensor[0,1,:].all(), "rot error"
 assert dielectric_tensor_init[1,1,:].all() == dielectric_tensor[2,2,:].all(), "rot error"
 
-e_inf = lcso_params.lcso_e_inf
-for i in np.arange(3):
-    dielectric_tensor[i,i,:] = dielectric_tensor[i,i,:]+e_inf
+
 
 wl_to_use = 635
 wl_nm_array = np.array([wl_to_use]) #Katherine's laser wavelength
@@ -48,3 +50,5 @@ ld_director, lb_director = yps.get_ld_lb_directors(dielectric_near_wl)
 scale_factor = 300
 ld_director = ld_director*scale_factor
 lb_director = lb_director*scale_factor
+
+
