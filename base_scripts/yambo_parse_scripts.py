@@ -18,7 +18,7 @@ def parse_yambo_file(filepath,folder,pol_str_list,calc_type="lrc",q_str = "1"):
     files = []
     for i in range(len(f_str_list)):
         full_path = os.sep.join((filepath,folder))
-        files.append(yamboparser.YamboFile(f_str_list[i],full_path))
+        files.append(yamboparser.YamboFile(f_str_list[i],full_path,**{"zip_tags" : True}))
     return files
 def load_data(file):
     data = file.data

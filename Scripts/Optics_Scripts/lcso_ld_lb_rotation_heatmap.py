@@ -83,7 +83,18 @@ norm = colors.Normalize(vmin=-1, vmax=1);
 cbar = fig.colorbar(gridb,ax = ax)
 cbar.set_label("Signal (arb . u.)")
 fig.savefig("ld_lb_lcso_heatmap.png",dpi=1000)
-fig.show()
+
+target_wvl = 635 #nm
+wvl_idx = np.argmin(np.abs(spec_nm-target_wvl))
+
+fig, ax = plt.subplots()
+ax.plot(angular_set_deg,ld_matrix[wvl_idx,:],label = "LD")
+ax.plot(angular_set_deg,lb_matrix[wvl_idx,:],label = "LB")
+ax.set_ylabel("Signal (arb. u.)")
+ax.set_xlabel("Rotation angle (deg.)")
+fig.legend(bbox_to_anchor=(0,0,.95,.95))
+fig.tight_layout()
+fig.savefig("ld_lb_rotation.png",dpi=1000)
 
 
 
