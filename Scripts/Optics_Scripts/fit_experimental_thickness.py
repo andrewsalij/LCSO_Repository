@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.optimize as op
+import sklearn.metrics
 import os
 import setup
 import base_scripts.parse_excel as parse_excel
@@ -40,6 +41,8 @@ def acd_m03_m00(z,d1, d2, b1, b2):
     numerator = (d1*b2-d2*b1)*(np.cosh((i_p*z).astype(float)) - np.cos((r_p*z).astype(float)))
     denominator = (r_p**2+d_sq)*np.cosh((i_p*z).astype(float))+(i_p**2-d_sq)*np.cos((r_p*z).astype(float))
     return 2*32980/np.log(10)*numerator/denominator
+
+
 #pol_array_init = np.array([0.013389717511370684, 0.013202875400325859, 0.017048385109910382, 0.04074044653199602],
                         #  dtype = float) #500 nm wavelength polarizance smm params
 pol_array_init = np.array([0.005069503533720284, 0.02163506027617761, -0.0505549674670049, -0.007262965152723405],
@@ -51,10 +54,12 @@ mean_thickness_eV = mean_thickness*1e-6/(1.973e-7)
 popt_simple, pcov_simple = op.curve_fit(m03_brown, mean_thickness_eV, cd_to_use, p0=pol_array_init, maxfev=10000)
 std_simple= np.sqrt(np.diag(pcov_simple))
 cd_fit_simple = m03_brown(thickness_eV_array,*popt_simple)
+r2_simple = sklearn.metrics.r2_score(acd_m03_m00(mean_thickness_eV,*popt_simple),cd_to_use)
 
 popt_acd, pcov_acd = op.curve_fit(acd_m03_m00, mean_thickness_eV, cd_to_use, p0=pol_array_init, maxfev=10000,bounds=(-1,np.inf))
 std_acd = np.sqrt(np.diag(pcov_acd))
 cd_fit_acd = acd_m03_m00(thickness_eV_array,*popt_acd)
+r2_acd_full = sklearn.metrics.r2_score(acd_m03_m00(mean_thickness_eV,*popt_acd),cd_to_use)
 
 fig,ax = plt.subplots()
 ax.scatter(mean_thickness,cd_to_use,color = "black",label = "Experiment")
@@ -62,7 +67,8 @@ ax.plot(thickness_um_array,cd_fit_simple,linestyle = "--",color = "black")
 ax.plot(thickness_um_array,cd_fit_acd,linestyle = "dotted",color = "black")
 ax.set_xlabel("Thickness (um)")
 ax.set_ylabel("CD (mdeg)")
-fig.show()
+fig.savefig("acd_fig.png")
+#fig.show()
 
 
 save_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","Fit_Thickness"))
