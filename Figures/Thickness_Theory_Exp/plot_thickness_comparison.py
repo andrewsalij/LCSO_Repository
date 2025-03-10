@@ -38,9 +38,9 @@ ax[1].legend()
 
 
 
-sub_titles = ["a","b"]
+sub_titles = ["A","B"]
 for i in range(2):
-    ax[i].text(.01,.9,sub_titles[i],weight = "bold",transform = ax[i].transAxes)
+    ax[i].text(.01,.9,sub_titles[i],fontsize = 10,weight = "bold",transform = ax[i].transAxes)
 
 
 fig.subplots_adjust(hspace = 0)

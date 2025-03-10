@@ -73,7 +73,7 @@ for i in range(2):
     axes[i].add_artist(legend_init)
 axes[0].set_ylabel("CD (mdeg)",labelpad=-5)
 for i in range(2):
-    axes[i].text(.04,1.02,["a)","b)"][i],transform = axes[i].transAxes)
+    axes[i].text(.04,1.02,["A","B"][i],transform = axes[i].transAxes,fontsize = 10,weight = "bold")
 plt.subplots_adjust(left= .2)
 fig.savefig("lcso_acd_li_control_comparison_100nm.png",dpi = 500)
 fig.show()

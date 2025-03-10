@@ -47,14 +47,14 @@ yps.plot_abs_coef_polarization("",abs_lrc_x,spec_lrc,figure=fig,ax=ax[0],**base_
 yps.plot_abs_coef_polarization("",abs_lrc_y,spec_lrc,figure=fig,ax=ax[1],**base_kwargs)
 yps.plot_abs_coef_polarization("",abs_lrc_z,spec_lrc,figure=fig,ax=ax[2],**base_kwargs)
 
-subtitles = ["a)","b)","c)"]
+subtitles = ["A","B","C"]
 
 for i in range(np.size(ax)):
     cur_axis = ax[i]
     cur_axis.set_xlim(0,6)
     cur_axis.set_ylim(-10,100)
     cur_axis.set_xlabel("Energy (eV)")
-    cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes)
+    cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10,weight = "bold")
 
 ax[0].set_ylabel(r"$\alpha$ ($\mu$m$^{-1}$)")
 #legends

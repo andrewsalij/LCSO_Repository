@@ -7,7 +7,7 @@ import os
 import setup
 '''Figure for ACD in inorganics paper--comparison polarization via  ALDA and ALDA+LRC '''
 
-plot_abs = True
+plot_abs = False
 filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
 pol_str_list = ["_X","_Y","_Z"]
 
@@ -54,7 +54,7 @@ else:
     yps.plot_dielectric_polarization("",data_lrc_1,spec_lrc,figure = fig,ax = ax[2],**base_kwargs)
     yps.plot_dielectric_polarization("",data_lrc_1pt5,spec_lrc,figure = fig,ax = ax[3],**base_kwargs)
 
-subtitles = ["a","b","c","d"]
+subtitles = ["A","B","C","D"]
 
 for i in range(np.size(ax)):
     cur_axis = ax[i]
@@ -62,7 +62,7 @@ for i in range(np.size(ax)):
         cur_axis.set_ylim(0,2e1)
     else:
         cur_axis.set_ylim(0,25)
-    cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes,weight=  "bold")
+    cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10, weight=  "bold")
 if (plot_abs):
     ax[0].set_ylabel(r"$\alpha (\text{eV}\hbar^{-1}c^{-1})$")
 else:
