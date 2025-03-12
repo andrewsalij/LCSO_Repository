@@ -1,0 +1,451 @@
+     __      __   ______   __       __  _______    ______                 
+    |  \    /  \ /      \ |  \     /  \|       \  /      \                
+     \$$\  /  $$|  $$$$$$\| $$\   /  $$| $$$$$$$\|  $$$$$$\               
+      \$$\/  $$ | $$__| $$| $$$\ /  $$$| $$__/ $$| $$  | $$               
+       \$$  $$  | $$    $$| $$$$\  $$$$| $$    $$| $$  | $$               
+        \$$$$   | $$$$$$$$| $$\$$ $$ $$| $$$$$$$\| $$  | $$               
+        | $$    | $$  | $$| $$ \$$$| $$| $$__/ $$| $$__/ $$               
+        | $$    | $$  | $$| $$  \$ | $$| $$    $$ \$$    $$               
+         \$$     \$$   \$$ \$$      \$$ \$$$$$$$   \$$$$$$                
+                                                                          
+    Version 5.1.0 Revision 21422 Hash (prev commit) fde6e2a07             
+                        Branch is (HEAD                                   
+                     MPI+HDF5_MPI_IO Build                                
+                   http://www.yambo-code.org                              
+ 
+ 05/12/2024 at 00:29 yambo @ qnode0211
+ ==================================================
+
+ Cores               :  1
+ Threads per core    :  1
+ Threads total       :  1
+ Nodes Computing     :  1
+ Nodes IO            :  1
+
+ Fragmented WFs      : yes
+ CORE databases      : .
+ Additional I/O      : .
+ Communications      : .
+ Input file          : alda_xz.in
+ Report file         : ./r-ALDA_XZ_optics_chi_tddft
+ Verbose log/report  : no
+ Log files           : ./LOG
+
+ Job   string        : ALDA_XZ
+
+ Precision           : SINGLE
+  
+ [RD./SAVE//ns.db1]--------------------------------------------------------------
+  Bands                                            :   500
+  K-points                                         :  112
+  G-vectors                                        :   476443 [RL space]
+  Components                                       :   59632 [wavefunctions]
+  Symmetries                                       :  2 [spatial]
+  Spinor components                                :  1
+  Spin polarizations                               :  1
+  Temperature                                      :  0.025852 [eV]
+  Electrons                                        :  386.0000
+  WF G-vectors                                     :   67465
+  Max atoms/species                                :  24
+  No. of atom species                              :   4
+  Exact exchange fraction in XC                    :  0.000000
+  Exact exchange screening in XC                   :  0.000000
+  Magnetic symmetries                              : no
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+
+ [02] CORE Variables Setup
+ =========================
+
+
+  [02.01] Unit cells
+  ==================
+
+  Cell kind             :  Unknown
+  Atoms in the cell     :  Co  Li  O  Se
+  number of Co atoms    :   6
+  number of Li atoms    :   4
+  number of O  atoms    :  24
+  number of Se atoms    :   8
+
+  List of atomic masses
+  Mass of Co    :  58.93319
+  Mass of Li    :  6.941000
+  Mass of O     :  15.99940
+  Mass of Se    :  78.96000
+
+  List of atomic coordinates    : [cc]
+  Co1       :  7.633265  0.000000  0.000000  order 9
+  Co2       :  4.436231  8.726377  6.617214  order 10
+  Co3       : -1.110060  8.888863  8.947532  order 11
+  Co4       :   6.78549   0.16249  10.90411  order 12
+  Co5       :  9.982523  8.563892  4.286896  order 13
+  Co6       :   2.08697  17.29027   2.33032  order 14
+  Li1       :   5.55575  11.19594   1.07067  order 39
+  Li2       :  6.513751  2.469565  5.546548  order 40
+  Li3       :   3.31672   6.25681  12.16376  order 41
+  Li4       :   2.35871  14.98319   7.68788  order 42
+  O1       :  -0.54134  16.01919  10.08688  order 15
+  O2       :  6.216764  7.292808  9.764757  order 16
+  O3       :  9.413798  1.433569  3.147544  order 17
+  O4       :   2.65570  10.15995   3.46967  order 18
+  O5       :  -2.66523  11.59910  11.09270  order 19
+  O6       :  8.340660  2.872723  8.758941  order 20
+  O7       :  11.53769   5.85365   2.14173  order 21
+  O8       :   0.53180  14.58003   4.47549  order 22
+  O9       :  -5.16047  15.73069  12.01964  order 23
+  O10       :  10.83589   7.00431   7.83200  order 24
+  O11       :  14.03293   1.72206   1.21479  order 25
+  O12       :  -1.96343  10.44844   5.40243  order 26
+  O13       :  1.474494  6.374968  7.639176  order 27
+  O14       :   4.20093  15.10135  12.21246  order 28
+  O15       :   7.39797  11.07779   5.59525  order 29
+  O16       :  4.671528  2.351410  1.021963  order 30
+  O17       :   3.01145   2.61058  10.71578  order 31
+  O18       :   2.66398  11.33696   9.13586  order 32
+  O19       :   5.86101  14.84217   2.51864  order 33
+  O20       :  6.208483  6.115794  4.098570  order 34
+  O21       :  2.647149  1.860289  5.866425  order 35
+  O22       :   9.42235  10.58667   0.75079  order 36
+  O23       :   6.22531  15.59247   7.36800  order 37
+  O24       :  -0.54988   6.86609  12.48364  order 38
+  Se1       :  -3.27876  14.44215   9.75033  order 1
+  Se2       :   8.95419   5.71578  10.10131  order 2
+  Se3       :  12.15123   3.01060   3.48410  order 3
+  Se4       :  -0.08173  11.73698   3.13312  order 4
+  Se5       :  1.006324  3.204326  8.224270  order 5
+  Se6       :   4.66910  11.93070  11.62737  order 6
+  Se7       :   7.86614  14.24843   5.01016  order 7
+  Se8       :  4.203358  5.522051  1.607056  order 8
+
+  Alat factors          :  15.26653  17.45275  13.23443 [a.u.]
+  Direct lattice volume :   3526.22    [a.u.]
+  Direct lattice vectors:  A[ 1 ]  A[ 2 ]  A[ 3 ]
+   A[ 1 ]:  1.000000  0.000000  0.000000  [iru]
+   A[ 2 ]:  0.000000  1.000000  0.000000  [iru]
+   A[ 3 ]: -0.418829  0.000000  1.000000  [iru]
+
+  Recip. lattice volume :  0.070345 [a.u.]
+  Recip. lattice vectors:  B[ 1 ]  B[ 2 ]  B[ 3 ]
+   B[ 1 ]:  1.000000  0.000000  0.418829  [iku]
+   B[ 2 ]:  0.000000  1.000000  0.000000  [iku]
+   B[ 3 ]:  0.000000  0.000000  1.000000  [iku]
+   
+
+  [02.02] Symmetries
+  ==================
+
+  Inversion symmetry    : yes
+  Spatial inversion     : yes
+  Inversion index       :  2
+  K-space Time-reversal : no
+  Magnetic symmetries   : no
+  Group table correct   : yes
+  Symmetries units      :  [cc]
+
+   [S 1]:   1.00000      0.00000      0.00000      0.00000      1.00000      0.00000     0.379455E-7   0.00000      1.00000   
+   [S 2]:  -1.00000      0.00000      0.00000      0.00000     -1.00000      0.00000    -0.379455E-7   0.00000     -1.00000   
+
+  [02.03] Reciprocal space
+  ========================
+
+  nG shells         :  109323
+  nG charge         :   476443
+  nG WFs            :   67465
+  nC WFs            :   59632
+  G-vecs. in first 80 shells:  [ Number ]
+    1   3   5   7   9  13  17  21  23
+    25   27   31   33   37   41   45   49   51
+    55   57   61   63   67   71   75   77   81
+    85   89   93   97  101  105  107  109  113
+   115  119  123  125  129  131  133  137  141
+   145  149  153  155  159  163  167  171  175
+   177  181  185  187  191  195  199  203  205
+   209  213  217  221  225  229  231  235  239
+   243  247  249  253  257  261  263  267
+  ...
+  Shell energy in first 80 shells:  [ mHa ]
+     0.0000   64.8040  104.4627  112.6988  122.7584  169.2667  177.5028  187.5624  259.2159
+   311.5646  341.7434  363.6786  366.4518  371.9148  376.3686  381.9744  406.5474  417.8508
+   431.2558  450.7953  482.6548  491.0336  515.5992  555.8375  570.7806  583.2358  600.9593
+   625.6677  677.0668  687.6985  695.9346  705.9942  710.0112  719.3558  744.0642  750.2496
+   769.6537  784.1598  808.8682  824.5410  834.4578  835.5427  865.7214  889.3448  894.8005
+    900.347      924.979      930.525      940.164      949.688      978.572      1001.09      1003.28      1004.97   
+    1014.29      1028.87      1034.03      1036.86      1074.27      1079.09      1083.76      1094.76      1104.83   
+    1124.94      1141.33      1149.56      1159.62      1169.63      1199.38      1246.26      1273.51      1302.59   
+    1311.06      1327.30      1336.07      1348.43      1352.89      1364.04      1366.97      1378.61   
+  ...
+
+  [02.04] K-grid lattice
+  ======================
+
+  Compatible Grid is   : 3D
+  Base K vectors       :  K_min[ 1 ]  K_min[ 2 ]  K_min[ 3 ]
+  K_min[ 1 ] :  0.000000  0.166667  0.000000 [rlu]
+  K_min[ 2 ] : -0.166667      0.00000    -0.745058E-8 [rlu]
+  K_min[ 3 ] :  0.729532E-8   0.00000     0.166667    [rlu]
+  Grid dimensions      :   6   6   6
+  K lattice UC volume  :  0.325669E-3 [a.u.]
+
+  [02.05] Energies & Occupations
+  ==============================
+
+  [X] === General ===
+  [X] Electronic Temperature                        :  0.258606E-1   300.100    [eV K]
+  [X] Bosonic    Temperature                        :  0.258606E-1   300.100    [eV K]
+  [X] Finite Temperature mode                       : yes
+  [X] El. density                                   :  0.73871E+24 [cm-3]
+  [X] Fermi Level                                   :  8.548547 [eV]
+
+  [X] === Gaps and Widths ===
+  [X] Conduction Band Min                           :  8.548547 [eV]
+  [X] Valence Band Max                              :  8.548547 [eV]
+  [X] Filled Bands                                  :  189
+  [X] Metallic Bands                                :  190  200
+  [X] Empty Bands                                   :   201   500
+   
+  [X] === Metallic Characters ===
+  [X] N of el / N of met el                         :  386.0000    7.9984
+  [X] Average metallic occ.                         :  0.181781
+
+  [WARNING][X] Metallic system
+   
+
+ [03] Transferred momenta grid and indexing
+ ==========================================
+
+ [RD./SAVE//ndb.kindx]-----------------------------------------------------------
+  Fragmentation                                    : no
+  Polarization last K                              :  112
+  QP states                                        :    1  112
+  X grid is uniform                                : yes
+  Grids                                            : X S
+  BS scattering                                    : no
+  COLL scattering                                  : no
+  Sigma scattering                                 : yes
+  X scattering                                     : yes
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+
+ IBZ Q-points :  112
+ BZ  Q-points :  216
+
+ K/Q-points units:
+ rlu = crystal or reduced units; cc = cartesian coordinates; iku = interal k-units
+
+ Q [  1]:  0.000000  0.000000  0.000000 [rlu]
+ Q [  2]:  0.729532E-8   0.00000     0.166667    [rlu]
+ Q [  3]:  0.145906E-7   0.00000     0.333333    [rlu]
+ Q [  4]: -0.218860E-7   0.00000    -0.500000    [rlu]
+ Q [  5]:  0.000000  0.166667  0.000000 [rlu]
+ Q [  6]:  0.729532E-8  0.166667     0.166667    [rlu]
+ Q [  7]:  0.145906E-7  0.166667     0.333333    [rlu]
+ Q [  8]: -0.218860E-7  0.166667    -0.500000    [rlu]
+ Q [  9]:  0.000000  0.333333  0.000000 [rlu]
+ Q [ 10]:  0.729532E-8  0.333333     0.166667    [rlu]
+ Q [ 11]:  0.145906E-7  0.333333     0.333333    [rlu]
+ Q [ 12]: -0.218860E-7  0.333333    -0.500000    [rlu]
+ Q [ 13]:  0.000000 -0.500000  0.000000 [rlu]
+ Q [ 14]:  0.729532E-8 -0.500000     0.166667    [rlu]
+ Q [ 15]:  0.145906E-7 -0.500000     0.333333    [rlu]
+ Q [ 16]: -0.218860E-7 -0.500000    -0.500000    [rlu]
+ Q [ 17]:  0.166667      0.00000     0.149012E-7 [rlu]
+ Q [ 18]:  0.166667  0.000000  0.166667 [rlu]
+ Q [ 19]:  0.166667  0.000000  0.333333 [rlu]
+ Q [ 20]:  0.166667  0.000000 -0.500000 [rlu]
+ Q [ 21]:  0.166667  0.000000 -0.333333 [rlu]
+ Q [ 22]:  0.166667  0.000000 -0.166667 [rlu]
+ Q [ 23]:  0.166667     0.166667     0.149012E-7 [rlu]
+ Q [ 24]:  0.166667  0.166667  0.166667 [rlu]
+ Q [ 25]:  0.166667  0.166667  0.333333 [rlu]
+ Q [ 26]:  0.166667  0.166667 -0.500000 [rlu]
+ Q [ 27]:  0.166667  0.166667 -0.333333 [rlu]
+ Q [ 28]:  0.166667  0.166667 -0.166667 [rlu]
+ Q [ 29]:  0.166667     0.333333     0.149012E-7 [rlu]
+ Q [ 30]:  0.166667  0.333333  0.166667 [rlu]
+ Q [ 31]:  0.166667  0.333333  0.333333 [rlu]
+ Q [ 32]:  0.166667  0.333333 -0.500000 [rlu]
+ Q [ 33]:  0.166667  0.333333 -0.333333 [rlu]
+ Q [ 34]:  0.166667  0.333333 -0.166667 [rlu]
+ Q [ 35]:  0.166667    -0.500000     0.149012E-7 [rlu]
+ Q [ 36]:  0.166667 -0.500000  0.166667 [rlu]
+ Q [ 37]:  0.166667 -0.500000  0.333333 [rlu]
+ Q [ 38]:  0.166667 -0.500000 -0.500000 [rlu]
+ Q [ 39]:  0.166667 -0.500000 -0.333333 [rlu]
+ Q [ 40]:  0.166667 -0.500000 -0.166667 [rlu]
+ Q [ 41]:  0.333333      0.00000     0.298023E-7 [rlu]
+ Q [ 42]:  0.333333  0.000000  0.166667 [rlu]
+ Q [ 43]:  0.333333  0.000000  0.333333 [rlu]
+ Q [ 44]:  0.333333  0.000000 -0.500000 [rlu]
+ Q [ 45]:  0.333333  0.000000 -0.333333 [rlu]
+ Q [ 46]:  0.333333  0.000000 -0.166667 [rlu]
+ Q [ 47]:  0.333333     0.166667     0.298023E-7 [rlu]
+ Q [ 48]:  0.333333  0.166667  0.166667 [rlu]
+ Q [ 49]:  0.333333  0.166667  0.333333 [rlu]
+ Q [ 50]:  0.333333  0.166667 -0.500000 [rlu]
+
+ Remaining 62 points informations can be written running with -fatlog
+
+
+ Timing [Min/Max/Average]: 06s/06s/06s
+
+ [04] Dipoles
+ ============
+
+ [RD./SAVE//ns.kb_pp_pwscf]------------------------------------------------------
+  Fragmentation                                    : yes
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+
+ [WARNING] [x,Vnl] slows the Dipoles computation. To neglect it rename the ns.kb_pp file
+ [WF-Oscillators/G space/Transverse up loader] Normalization (few states)  min/max  :  0.74616E-11   1.0000    
+
+ [WR./ALDA_XZ//ndb.dipoles]------------------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :  112  216  112  216
+  RL vectors                                       :   67465 [WF]
+  Fragmentation                                    : yes
+  Electronic Temperature                           :  300.1000 [K]
+  Bosonic    Temperature                           :  300.1000 [K]
+  DIP band range                                   :     1   500
+  DIP band range limits                            :  200  190
+  DIP e/h energy range                             : -1.000000 -1.000000 [eV]
+  RL vectors in the sum                            :   67465
+  [r,Vnl] included                                 : yes
+  Bands ordered                                    : yes
+  Direct v evaluation                              : no
+  Approach used                                    : G-space v
+  Dipoles computed                                 : R V P
+  Wavefunctions                                    : Perdew, Burke & Ernzerhof SOL(X)+Perdew, Burke & Ernzerhof SOL(C)
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+
+ [WARNING] [r,Vnl^pseudo] included in position and velocity dipoles.
+
+ [WARNING] In case H contains other non local terms, these are neglected
+
+ Timing [Min/Max/Average]: 04d-01h-39m/04d-01h-39m/04d-01h-39m
+
+ [05] Optics
+ ===========
+
+ [xc] Functional : Perdew, Burke & Ernzerhof SOL(X)+Perdew, Burke & Ernzerhof SOL(C)
+ [xc] LIBXC used to calculate xc functional
+  PP Number of Atomic Species                      :   4
+  NLCC RL compoments                               :   476443
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+
+ [WARNING] USPP corrections to rho gradient not implemented
+
+ [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+
+ [WARNING] Fxc not coded for GGA. Using LDA part only of the functional
+
+ [WARNING] The system is a metal but Drude term not included.
+ [RD./ALDA_XZ//ndb.dipoles]------------------------------------------------------
+  Brillouin Zone Q/K grids (IBZ/BZ)                :  112  216  112  216
+  RL vectors                                       :   67465 [WF]
+  Fragmentation                                    : yes
+  Electronic Temperature                           :  300.1000 [K]
+  Bosonic    Temperature                           :  300.1000 [K]
+  DIP band range                                   :     1   500
+  DIP band range limits                            :  200  190
+  DIP e/h energy range                             : -1.000000 -1.000000 [eV]
+  RL vectors in the sum                            :   67465
+  [r,Vnl] included                                 : yes
+  Bands ordered                                    : yes
+  Direct v evaluation                              : no
+  Approach used                                    : G-space v
+  Dipoles computed                                 : R V P
+  Wavefunctions                                    : Perdew, Burke & Ernzerhof SOL(X)+Perdew, Burke & Ernzerhof SOL(C)
+ - S/N 004298 ---------------------------------------------- v.05.01.00 r.21422 -
+ [X-CG] R(p) Tot o/o(of R):    369728  13329422       100
+
+ Timing [Min/Max/Average]: 05h-14m/05h-14m/05h-14m
+
+ [06] Timing Overview
+ ====================
+
+ Clock: global
+                       io_ATMPROJ_pwscf :      0.0000s CPU
+                             Xo (REDUX) :      0.0000s CPU
+                         io_Double_Grid :      0.0000s CPU
+                           io_KB_abinit :      0.0000s CPU
+                             io_COL_CUT :      0.0000s CPU
+                                  io_BS :      0.0001s CPU
+                                  io_HF :      0.0001s CPU
+                                   io_X :      0.0002s CPU (   4 calls,   0.043 msec avg)
+                               io_QINDX :      0.0071s CPU (   2 calls,   3.535 msec avg)
+                                io_GROT :      0.0204s CPU (   2 calls,  10.177 msec avg)
+                IO_and_Messaging_switch :      0.1151s CPU ( 231 calls,   0.498 msec avg)
+                              FFT_setup :      0.1381s CPU (   2 calls,  69.052 msec avg)
+                         eval_G_minus_G :      0.1512s CPU
+                           PP_uspp_init :      0.2069s CPU ( 114 calls,   1.815 msec avg)
+      MATRIX transfer (X_G_X_redux_2_1) :      0.9005s CPU (2000 calls,   0.450 msec avg)
+      MATRIX transfer (X_G_X_redux_1_1) :      1.0124s CPU (2000 calls,   0.001 sec avg)
+                              X (REDUX) :      1.6478s CPU
+                      SERIAL_lin_system :      4.8502s CPU (2000 calls,   0.002 sec avg)
+                             io_DIPOLES :      5.6397s CPU ( 232 calls,   0.024 sec avg)
+                         LINEAR ALGEBRA :      6.4027s CPU (2000 calls,   0.003 sec avg)
+                          X (procedure) :     13.0278s CPU
+                            io_KB_pwscf :    207.9473s CPU ( 114 calls,   1.824 sec avg)
+                                  io_WF :    275.1707s CPU ( 565 calls,   0.487 sec avg)
+                    XC_potential_driver :    316.9413s CPU
+                            io_fragment :    368.1379s CPU ( 448 calls,   0.822 sec avg)
+                            WF_load_FFT :    428.8255s CPU ( 114 calls,   3.762 sec avg)
+                         Xo (procedure) :      05h-05m CPU
+                      DIPOLE_transverse :  04d-01h-39m CPU
+                                Dipoles :  04d-01h-39m CPU
+
+ [07] Game Over & Game summary
+ =============================
+
+ 05/12/2024 at 00:29 yambo @ qnode0211 [start]
+ 05/12/2024 at 08:56                   [end]
+
+ Timing   [Min/Max/Average]: 04d-06h-53m/04d-06h-53m/04d-06h-53m
+             [Time-Profile]: 04d-06h-53m
+
+ .-ACKNOWLEDGMENT
+ |
+ | The users of YAMBO have little formal obligations with respect to
+ | the YAMBO group (those specified in the GNU General Public
+ | License, http://www.gnu.org/copyleft/gpl.txt). However, it is
+ | common practice in the scientific literature, to acknowledge the
+ | efforts of people that have made the research possible. In this
+ | spirit, please find below the reference we kindly ask you to use
+ | in order to acknowledge YAMBO
+ |
+ | Many-body perturbation theory calculations using the yambo code
+ | D. Sangalli, A. Ferretti, H. Miranda, C. Attaccalite, I. Marri, E. Cannuccia, P. Melo,
+ | M Marsili, F Paleari, A Marrazzo, G Prandini, P Bonfà, M O Atambo, F Affinito,
+ | M Palummo, A Molina-Sánchez, C Hogan, M Grüning, D Varsano and A Marini.
+ | J. Phys.: Condens. Matter 31, 325902 (2019).
+ |
+ | Yambo: An ab initio tool for excited state calculations
+ | A. Marini, C. Hogan, M. Grüning, D. Varsano
+ | Computer Physics Communications 180, 1392 (2009).
+ |
+  
+ .-Input file  alda_xz.in
+ | optics                           # [R] Linear Response optical properties
+ | chi                              # [R][CHI] Dyson equation for Chi.
+ | tddft                            # [R][K] Use TDDFT kernel
+ | ElecTemp= 0.025861         eV    # Electronic Temperature
+ | BoseTemp= 0.025861         eV    # Bosonic Temperature
+ | Chimod= "ALDA"                   # [X] IP/Hartree/ALDA/LRC/PF/BSfxc
+ | FxcGRLc=  51               RL    # [TDDFT] XC-kernel RL size
+ | NGsBlkXd=  51              RL    # [Xd] Response block size
+ | % QpntsRXd
+ |  1 | 1 |                             # [Xd] Transferred momenta
+ | %
+ | % BndsRnXd
+ |     1 |  500 |                       # [Xd] Polarization function bands
+ | %
+ | GrFnTpXd= "R"                    # [Xd] Green`s function (T)ordered,(R)etarded,(r)senant,(a)ntiresonant [T, R, r, Ta, Ra]
+ | % EnRngeXd
+ |   0.00000 | 10.00000 |         eV    # [Xd] Energy range
+ | %
+ | % DmRngeXd
+ |  0.050000 | 0.050000 |         eV    # [Xd] Damping range
+ | %
+ | ETStpsXd= 2000                   # [Xd] Total Energy steps
+ | % LongDrXd
+ |  1.000000 | 0.000000 | 1.000000 |        # [Xd] [cc] Electric Field
+ | %
+ | DipComputed= "R V P"             # [DIP] [default R P V; extra P2 Spin Orb]
