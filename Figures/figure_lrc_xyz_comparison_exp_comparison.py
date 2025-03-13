@@ -40,7 +40,7 @@ fig,ax = plt.subplots(figsize = (10,2.5),ncols =4,sharey = True)
 colors = ["red","blue","green"]
 linestyles = ["solid","--","-."]
 
-base_kwargs = {"linestyles":linestyles,"colors":colors,"legend":False,"xlabel":r"$\omega (eV\hbar^{-1})$","ylabel":""}
+base_kwargs = {"linestyles":linestyles,"colors":colors,"legend":False,"xlabel":r"$\omega (\text{eV}\hbar^{-1})$","ylabel":""}
 if (plot_abs):
 
     yps.plot_abs_coef_polarization("",abs_alda,spec_lrc,figure = fig,ax = ax[0],**base_kwargs)
@@ -62,7 +62,10 @@ for i in range(np.size(ax)):
         cur_axis.set_ylim(0,2e1)
     else:
         cur_axis.set_ylim(0,25)
-    cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10, weight=  "bold")
+    if plot_abs:
+        cur_axis.text(.04,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10, weight=  "bold")
+    else:
+        cur_axis.text(.1,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10, weight=  "bold")
 if (plot_abs):
     ax[0].set_ylabel(r"$\alpha (\text{eV}\hbar^{-1}c^{-1})$")
 else:
