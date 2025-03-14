@@ -7,7 +7,7 @@ import os
 import setup
 '''Figure for ACD in inorganics paper--comparison polarization via  ALDA and ALDA+LRC '''
 
-plot_abs = False
+plot_abs = True
 filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
 pol_str_list = ["_X","_Y","_Z"]
 
@@ -40,7 +40,7 @@ fig,ax = plt.subplots(figsize = (10,2.5),ncols =4,sharey = True)
 colors = ["red","blue","green"]
 linestyles = ["solid","--","-."]
 
-base_kwargs = {"linestyles":linestyles,"colors":colors,"legend":False,"xlabel":r"$\omega (\text{eV}\hbar^{-1})$","ylabel":""}
+base_kwargs = {"linestyles":linestyles,"colors":colors,"legend":False,"xlabel":r"Energy (eV)","ylabel":""}
 if (plot_abs):
 
     yps.plot_abs_coef_polarization("",abs_alda,spec_lrc,figure = fig,ax = ax[0],**base_kwargs)
@@ -54,7 +54,7 @@ else:
     yps.plot_dielectric_polarization("",data_lrc_1,spec_lrc,figure = fig,ax = ax[2],**base_kwargs)
     yps.plot_dielectric_polarization("",data_lrc_1pt5,spec_lrc,figure = fig,ax = ax[3],**base_kwargs)
 
-subtitles = ["A","B","C","D"]
+subtitles = ["a","b","c","d"]
 
 for i in range(np.size(ax)):
     cur_axis = ax[i]
@@ -67,7 +67,7 @@ for i in range(np.size(ax)):
     else:
         cur_axis.text(.1,.93,subtitles[i],transform = cur_axis.transAxes,fontsize= 10, weight=  "bold")
 if (plot_abs):
-    ax[0].set_ylabel(r"$\alpha (\text{eV}\hbar^{-1}c^{-1})$")
+    ax[0].set_ylabel(r"$\alpha$ $(\text{eV}\hbar^{-1}c^{-1})$")
 else:
     ax[0].set_ylabel(r"$\epsilon_i$")
 #legends

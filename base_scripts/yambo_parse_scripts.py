@@ -158,7 +158,7 @@ def plot_dielectric_polarization(filename,data_list,spec,labels = None,
 def plot_abs_coef_polarization(filename,abs_coef_list,spec,labels = None,
                                  colors = ["red","green","blue"],linestyles = ["solid","solid","solid"],
                                  xlim= (50000,1000),ylim =(0,20),
-                                 xlabel= r"Wavenumber (cm$^{-1}$)",ylabel= r"$\alpha_i (cm$^{-1}$)$",
+                                 xlabel= r"Wavenumber (cm$^{-1}$)",ylabel= r"$\alpha_i  (cm$^{-1}$)$",
                                  title="",legend=True,legend_fontsize=16,tight_layout=True,
                                  figure= None,ax=None):
     if figure == None:figure = plt.figure()
