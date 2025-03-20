@@ -66,6 +66,8 @@ See `Figures/plot_thickness_comparison_si.py`. Data in `Data/Modeling_Data/SMM_T
 See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine. TDDFT data in 
 `Data\Raw_Data\TDDFT\ALDA_PBEsol\ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
 
+## Figure S13
+
 ![figure_s13](Scripts/Optics_Scripts/ld_lb_lcso_heatmap.png)
 
 See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine. TDDFT data in 
