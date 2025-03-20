@@ -35,7 +35,7 @@ Associated theoretical data (scattering matrix method--SMM) `Data/Modeling_Data/
 ![figure_s1](Figures/lcso_lrc_abs_xyz_triple_comparison_eV.png)
 
 Plotting routine in `Figures/figure_lrc_xyz_comparison_exp_comparison.py`. Ensure that `plot_abs = True`.
-Data is a comparison of absorption coefficients calculated from `Data\Raw_Data\TDDFT\ALDA_PBEsol`, with the 
+Data is a comparison of absorption coefficients calculated from `Data/Raw_Data/TDDFT/ALDA_PBEsol`, with the 
 `o-ALDA_X.eps_q1_inv_alda_dyson` outputs being compared. Note that the raw files require `base_scripts.yambo_parse_scripts`
 to be efficiently parsed.
 NOTE: There is a bug in `yambopy` prior to April 2024 that prevents correct reading of these files. Update
@@ -51,9 +51,9 @@ Plotting routine in `Figures/figure_lrc_xyz_comparison_exp_comparison.py`, and e
 ![figure_s3](Figures/lcso_acd_li_control_comparison_100nm.png)
 
 Plotting routine in `Figures/figure_acd_li_control_comparison.py`. TDDFT data in `eps_q1_inv_alda_dyson`
-files for X, Y, Z, XY, XZ, and YZ polarizations in `ALDA` directories within `Data\Raw_Data\TDDFT` subfolders
+files for X, Y, Z, XY, XZ, and YZ polarizations in `ALDA` directories within `Data/Raw_Data/TDDFT` subfolders
 `ALDA_PBEsol` (main "LCSO" compound) and `Li_control_ALDA_PBEsol` (control).
-SMM results in `Data\Modeling_Data\SMM_Set_100nm`.
+SMM results in `Data/Modeling_Data/SMM_Set_100nm`.
 
 ## Figure S4
 ![figure_s4](Figures/Thickness_Theory_Exp/Figure_3_thickness_c_si.png)
@@ -64,13 +64,13 @@ See `Figures/plot_thickness_comparison_si.py`. Data in `Data/Modeling_Data/SMM_T
 ![figure_s12](Scripts/Optics_Scripts/ld_lb_rotation.png)
 
 See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine. TDDFT data in 
-`Data\Raw_Data\TDDFT\ALDA_PBEsol\ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
+`Data/Raw_Data/TDDFT/ALDA_PBEsol/ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
 
 ## Figure S13
 
 ![figure_s13](Scripts/Optics_Scripts/ld_lb_lcso_heatmap.png)
 
 See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine. TDDFT data in 
-`Data\Raw_Data\TDDFT\ALDA_PBEsol\ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
+`Data/Raw_Data/TDDFT/ALDA_PBEsol/ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
 Note that Figure S12 is essentially a slice of this figure. 
 
