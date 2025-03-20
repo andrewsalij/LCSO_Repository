@@ -12,14 +12,8 @@ mean_cd, cd_std_err,mean_thickness,thickness_std_err,front_cd,back_cd,front_std_
 
 theory_smm_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","SMM_Thickness"))
 
-theory_fit_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","Fit_Thickness"))
-
-thickness_fit = np.load(os.sep.join((theory_fit_path,"thickness_fit_acd.npy")))
-cd_fit = np.load(os.sep.join((theory_fit_path,"cd_fit_acd.npy")))
-
 thickness_theory = np.load(os.sep.join((theory_smm_path,"thickness_array.npy")))
 cd_theory = np.load(os.sep.join((theory_smm_path,"cd_array.npy")))
-
 
 fig,ax = plt.subplots(nrows = 1)
 
@@ -28,9 +22,6 @@ ax.set_xlabel("Thickness (microns)")
 ax.set_ylabel("CD (mdeg)")
 ax.set_xlim(0,40)
 ax.legend()
-
-
-
 
 fig.subplots_adjust(hspace = 0)
 fig.savefig("Figure_3_thickness_c_si")

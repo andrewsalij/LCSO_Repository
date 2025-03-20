@@ -11,7 +11,6 @@ mean_cd, cd_std_err,mean_thickness,thickness_std_err,front_cd,back_cd,front_std_
     = parse_excel.clean_exp_thickness_array(exp_array)
 
 theory_smm_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","SMM_Thickness"))
-
 theory_fit_path = os.sep.join((setup.BASE_DIR,"Data","Modeling_Data","Fit_Thickness"))
 
 thickness_fit = np.load(os.sep.join((theory_fit_path,"thickness_fit_acd.npy")))

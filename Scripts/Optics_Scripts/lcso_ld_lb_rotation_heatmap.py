@@ -11,8 +11,6 @@ import Scripts.lcso_params as lcso_params
 import matplotlib.colors as colors
 "Scattering matrix calculations for LCSO w/ various thicknesses. Transfer matrices hit an instability "
 filepath = os.sep.join((setup.BASE_DIR,"Data\Raw_Data\TDDFT\ALDA_PBEsol"))
-save_path = os.sep.join((setup.BASE_DIR,r"Data\Modeling_Data\SMM_Thickness"))
-os.makedirs(save_path,exist_ok = True)
 data_set = "alda"  #'alda' or 'lrc'
 pol_str_list = ["_X","_Y","_Z","_XY","_XZ","_YZ"]
 if data_set =="alda":
