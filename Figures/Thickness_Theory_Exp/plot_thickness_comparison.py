@@ -43,6 +43,6 @@ for i in range(2):
 
 
 fig.subplots_adjust(hspace = 0)
-fig.savefig("Figure_3_thickness_comparisonv2")
-fig.show()
+fig.savefig("Figure_3_thickness_comparisonv2.eps",format="eps",dpi=2000)
+#fig.show()
 
