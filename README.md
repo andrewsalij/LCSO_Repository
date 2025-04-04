@@ -12,7 +12,7 @@ GPL v3. See the documentation for these packages for more information including 
 
 # Figures
 
-Outlined below are the published figures alongside corresponding scripts and datasets. 
+“Presented below are the published main text figures and selected SM figures alongside corresponding scripts and datasets
 
 ## Figure 1 
 
@@ -20,6 +20,13 @@ Outlined below are the published figures alongside corresponding scripts and dat
 
 A version of Figure 1 and associated .svg files are in `Figures/Figure 1`.
 Note that the final figure has been altered from this and has had additional graphical elements added.
+
+## Figure 2 
+
+
+![figure_2](Figures/Figure_2.png)
+
+Relevant data in `Data/Figure_2_data`
 
 ## Figure 3
 
@@ -74,3 +81,6 @@ See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine
 `Data/Raw_Data/TDDFT/ALDA_PBEsol/ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
 Note that Figure S12 is essentially a slice of this figure. 
 
+## Notes
+
+Other SI figure data in `Data/SI_figure_LD_data` and `Data/SI_figure_CD_data`. 
