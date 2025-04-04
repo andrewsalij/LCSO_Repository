@@ -81,6 +81,14 @@ See `Scripts/Optics_Scripts/lcso_ld_lb_rotation_heatmap.py` for plotting routine
 `Data/Raw_Data/TDDFT/ALDA_PBEsol/ALDA` for `eps_q1_inv_alda_dyson` for X, Y, Z, XY, XZ, and YZ polarizations.
 Note that Figure S12 is essentially a slice of this figure. 
 
-## Notes
 
-Other SI figure data in `Data/SI_figure_LD_data` and `Data/SI_figure_CD_data`. 
+## Figure S14 
+
+![figure_s14](Data/SI_figure_LD_data/Figure_S14.png)
+
+Data in `Data/SI_figure_LD_data`.
+
+## Figure S16
+![figure_s16](Data/SI_figure_CD_data)
+
+Data in `Data/SI_figure_CD_data`.
