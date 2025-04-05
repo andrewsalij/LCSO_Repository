@@ -12,7 +12,7 @@ GPL v3. See the documentation for these packages for more information including 
 
 # Figures
 
-“Presented below are the published main text figures and selected SM figures alongside corresponding scripts and datasets
+Presented below are the published main text figures and selected SM figures alongside corresponding scripts and datasets
 
 ## Figure 1 
 
@@ -89,6 +89,6 @@ Note that Figure S12 is essentially a slice of this figure.
 Data in `Data/SI_figure_LD_data`.
 
 ## Figure S16
-![figure_s16](Data/SI_figure_CD_data)
+![figure_s16](Data/SI_figure_CD_data/Figure_S16.png)
 
 Data in `Data/SI_figure_CD_data`.
