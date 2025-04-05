@@ -7,8 +7,7 @@ pip install -r requirements.txt
 Ensure that the project root directory is on your path. 
 
 This program is a partial clone of SalijPhDWork (GPLv3) and is distributed under the same license.
-This program uses BerreMueller (GPLv3) and yambopy (GPL v2+). Correspondingly, it is distributed under
-GPL v3. See the documentation for these packages for more information including that on their dependencies. 
+See the documentation for these packages for more information including that on their dependencies. 
 
 # Figures
 
