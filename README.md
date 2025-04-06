@@ -1,4 +1,4 @@
-This is a package for modeling the optics of lithium cobalt selenate (LCSO)
+This repository contains the software and data associated with manuscript 10.1126/science.adr5478 entitled “Differential Absorption of Circularly Polarized Light by a Centrosymmetric Crystal”, which is concerned with the (chir)optics of lithium cobalt selenate (LCSO).
 
 From a Python 3.8 environment with pip install, install the requirements via the following:
 ```bash
